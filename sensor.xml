@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+  <sensor element="PH">
+    <id>1</id>
+    <value>2.53</value>
+    <date>01/01/1964 11:22:33</date>
+  </sensor>

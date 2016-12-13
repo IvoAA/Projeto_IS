@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<alarms node="PH">
+  <alarm id="1">
+    <condition>greater than</condition>
+    <value>8</value>
+  </alarm>
+  <alarm id="2">
+    <condition>less than</condition>
+    <value>6</value>
+  </alarm>
+  <alarm id="3">
+    <condition>between</condition>
+    <valueMin>7</valueMin>
+    <valueMax>8</valueMax>
+  </alarm>
+</alarms>
+<alarms node="NH3">
+  <alarm id="1">
+    <condition>greater than</condition>
+    <value>10</value>
+  </alarm>
+  <alarm id="3">
+    <condition>between</condition>
+    <valueMin>5</valueMin>
+    <valueMax>9</valueMax>
+  </alarm>
+</alarms>

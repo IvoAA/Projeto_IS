@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="sensor" type="sensortype">
+  </xs:element>
+
+
+  <xs:complexType name="sensortype">
+    <xs:sequence>
+      <xs:element name="id" type="xs:integer" />
+      <xs:element name="value" type="xs:decimal" />
+      <xs:element name="date" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="element" type="xs:string" use="required" />
+  </xs:complexType>
+
+
+
+
+
+</xs:schema>

@@ -1,0 +1,10 @@
+D:\Desktop\Ivo\Escola\3ano\5_IS\Ficha4\SmartH2O_DU\SmartH2O_DU\bin\Debug\SmartH2O_DU.exe.config
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_DU\bin\Debug\SmartH2O_DU.exe.config
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_DU\bin\Debug\SmartH2O_DU.exe
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_DU\bin\Debug\SmartH2O_DU.pdb
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_DU\bin\Debug\SensorNodeDll.dll
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_DU\obj\Debug\SmartH2O_DU.exe
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_DU\obj\Debug\SmartH2O_DU.pdb
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_DU\bin\Debug\M2Mqtt.Net.dll
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_DU\bin\Debug\M2Mqtt.Net.pdb
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_DU\obj\Debug\SmartH2O_DU.csprojResolveAssemblyReference.cache
