@@ -9,3 +9,13 @@ D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Data_Uploader\bin\Debug\Lib.
 D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Data_Uploader\bin\Debug\M2Mqtt.Net.pdb
 D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Data_Uploader\obj\Debug\Data_Uploader.exe
 D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Data_Uploader\obj\Debug\Data_Uploader.pdb
+C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Data_Uploader\bin\Debug\Data_Uploader.exe.config
+C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Data_Uploader\bin\Debug\Data_Uploader.exe
+C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Data_Uploader\bin\Debug\Data_Uploader.pdb
+C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Data_Uploader\bin\Debug\Lib.dll
+C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Data_Uploader\bin\Debug\M2Mqtt.Net.dll
+C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Data_Uploader\bin\Debug\SensorNodeDll.dll
+C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Data_Uploader\bin\Debug\Lib.pdb
+C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Data_Uploader\obj\Debug\Data_Uploader.csprojResolveAssemblyReference.cache
+C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Data_Uploader\obj\Debug\Data_Uploader.exe
+C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Data_Uploader\obj\Debug\Data_Uploader.pdb
