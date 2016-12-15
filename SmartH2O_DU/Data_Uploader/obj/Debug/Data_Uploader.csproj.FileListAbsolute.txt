@@ -1,0 +1,11 @@
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Data_Uploader\bin\Debug\Data_Uploader.exe.config
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Data_Uploader\obj\Debug\Data_Uploader.csprojResolveAssemblyReference.cache
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Data_Uploader\bin\Debug\Data_Uploader.exe
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Data_Uploader\bin\Debug\Data_Uploader.pdb
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Data_Uploader\bin\Debug\Lib.dll
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Data_Uploader\bin\Debug\M2Mqtt.Net.dll
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Data_Uploader\bin\Debug\SensorNodeDll.dll
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Data_Uploader\bin\Debug\Lib.pdb
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Data_Uploader\bin\Debug\M2Mqtt.Net.pdb
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Data_Uploader\obj\Debug\Data_Uploader.exe
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Data_Uploader\obj\Debug\Data_Uploader.pdb

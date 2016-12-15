@@ -1,8 +1,0 @@
-D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\martH2O_Alarm\bin\Debug\martH2O_Alarm.exe.config
-D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\martH2O_Alarm\bin\Debug\martH2O_Alarm.exe
-D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\martH2O_Alarm\bin\Debug\martH2O_Alarm.pdb
-D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\martH2O_Alarm\bin\Debug\M2Mqtt.Net.dll
-D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\martH2O_Alarm\bin\Debug\M2Mqtt.Net.pdb
-D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\martH2O_Alarm\obj\Debug\SmartH2O_Alarm.csprojResolveAssemblyReference.cache
-D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\martH2O_Alarm\obj\Debug\martH2O_Alarm.exe
-D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\martH2O_Alarm\obj\Debug\martH2O_Alarm.pdb
