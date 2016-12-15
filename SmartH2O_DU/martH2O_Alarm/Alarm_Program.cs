@@ -63,7 +63,7 @@ namespace SmartH2O_Teste
         static void Validate(string data)
         {
             isValid = true;
-            String XSDFilePath = AppDomain.CurrentDomain.BaseDirectory.ToString() + @"alarm.xsd";
+            String XMLFilePath = AppDomain.CurrentDomain.BaseDirectory.ToString() + @"trigger-rules.xml";
 
             ValidationMessage = "Document Valid!";
             XmlDocument doc = new XmlDocument();
@@ -71,7 +71,7 @@ namespace SmartH2O_Teste
             {
                 doc.LoadXml(data);
                 ValidationEventHandler eventH = new ValidationEventHandler(MyEvent);
-                doc.Schemas.Add(null, XSDFilePath);
+                doc.Schemas.Add(null, XMLFilePath);
                 doc.Validate(eventH);
             }
             catch (XmlException ex)

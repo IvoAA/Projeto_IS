@@ -43,7 +43,6 @@ namespace SmartH2O_DU
                 Console.WriteLine("Error connecting to message broker...");
                 return;
             }
-
             m_cClient.Publish(topic, Encoding.UTF8.GetBytes(sensor.OuterXml));
             Console.WriteLine("Sent");
         }
