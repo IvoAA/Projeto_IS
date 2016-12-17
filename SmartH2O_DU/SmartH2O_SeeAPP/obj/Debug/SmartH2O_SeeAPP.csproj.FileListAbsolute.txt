@@ -1,0 +1,9 @@
+C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\bin\Debug\SmartH2O_SeeAPP.exe.config
+C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\bin\Debug\SmartH2O_SeeAPP.exe
+C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\bin\Debug\SmartH2O_SeeAPP.pdb
+C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.csprojResolveAssemblyReference.cache
+C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.Form1.resources
+C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.Properties.Resources.resources
+C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.csproj.GenerateResource.Cache
+C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.exe
+C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.pdb

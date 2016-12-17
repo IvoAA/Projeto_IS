@@ -44,4 +44,64 @@
     <value>8.5</value>
     <date>15/12/2016 17:58:25</date>
   </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.4</value>
+    <date>15/12/2016 22:06:02</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.13</value>
+    <date>15/12/2016 22:06:03</date>
+  </sensor>
+  <sensor element="CI2">
+    <id>3</id>
+    <value>8.6</value>
+    <date>15/12/2016 22:06:05</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.2</value>
+    <date>15/12/2016 22:06:06</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.15</value>
+    <date>15/12/2016 22:06:07</date>
+  </sensor>
+  <sensor element="CI2">
+    <id>3</id>
+    <value>10.6</value>
+    <date>15/12/2016 22:06:08</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.5</value>
+    <date>15/12/2016 22:06:09</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.55</value>
+    <date>15/12/2016 22:06:10</date>
+  </sensor>
+  <sensor element="CI2">
+    <id>3</id>
+    <value>8.3</value>
+    <date>15/12/2016 22:06:45</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.7</value>
+    <date>15/12/2016 22:06:46</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.41</value>
+    <date>15/12/2016 22:06:47</date>
+  </sensor>
+  <sensor element="CI2">
+    <id>3</id>
+    <value>8.1</value>
+    <date>15/12/2016 22:06:48</date>
+  </sensor>
 </sensors>

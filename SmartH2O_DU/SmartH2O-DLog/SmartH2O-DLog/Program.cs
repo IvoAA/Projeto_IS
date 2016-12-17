@@ -68,7 +68,7 @@ MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, MqttMsgB
             try
             {
 
-                if ((e.Topic).Equals("NH3") || (e.Topic).Equals("CI2") || (e.Topic).Equals("PH"))
+                if (!(e.Topic).Equals("alarms"))
                 {
 
 
