@@ -16,3 +16,12 @@ D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\Sm
 D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.csproj.GenerateResource.Cache
 D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.exe
 D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.pdb
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\bin\Debug\SmartH2O_SeeAPP.exe.config
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\bin\Debug\SmartH2O_SeeAPP.exe
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\bin\Debug\SmartH2O_SeeAPP.pdb
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.csprojResolveAssemblyReference.cache
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.Form1.resources
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.Properties.Resources.resources
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.csproj.GenerateResource.Cache
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.exe
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.pdb

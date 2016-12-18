@@ -17,15 +17,38 @@ namespace SmartH2O_SeeAPP
         {
             InitializeComponent();
             comboBoxLogs.SelectedIndex = 0;
+<<<<<<< HEAD
             groupBoxLogsDaily.Location = new Point(54, 44);
+=======
+            groupBoxLogsDaily.Location = new Point(54,44);
+>>>>>>> origin/master
             groupBoxLogsWeekly.Location = new Point(54, 44);
         }
 
         private void buttonLogsBetweenDates_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
 
             /*Service1Client serviceClient = new Service1Client();
 
+=======
+<<<<<<< HEAD
+            /*Service1Client serviceClient = new Service1Client();
+=======
+            Service1Client serviceClient = new Service1Client();
+            // -----------------------------------------------------------------------------------GetSumInformationByWeek
+            /*Dictionary<int, double[]> dict = serviceClient.GetSumInformationByWeek("PH");
+
+            string result = "";
+            foreach (var week in dict.Keys)
+            {
+                double[] sums = dict[week];
+                result += "[" + week + "] Min: " + sums[0] + " Max: " + sums[1] + " Avg: " + sums[2] + Environment.NewLine;
+            }
+            */
+            /*// -----------------------------------------------------------------------------------GetSumInformationAtDay            
+>>>>>>> origin/master
+>>>>>>> origin/master
             //escolham dia 15 de dezembro porque só temos registos nesse dia por enquanto
             string date = dateTimePickerLogsStartingDate.Value.ToString("dd/MM/yyyy");
             string[] sum = serviceClient.GetSumInformationAtDay(date, "PH");
@@ -42,7 +65,11 @@ namespace SmartH2O_SeeAPP
                 dataGridViewLogs.Rows[i].Cells[4].Value = sums[3];
                 i++;
             }*/
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -55,6 +82,7 @@ namespace SmartH2O_SeeAPP
             if (checkBoxAll.Checked == false)
             {
                 checkedListBox1.Enabled = true;
+<<<<<<< HEAD
             }
             else
             {
@@ -92,6 +120,13 @@ namespace SmartH2O_SeeAPP
             string[] sum = serviceClient.GetSumInformationAtDay(date, "PH");
 
            /* Dictionary<DateTime, double[]> dict = serviceClient.GetSumInformationBetweenDates(dateTimePicker1.Value.Date, dateTimePicker2.Value.Date, "PH");
+=======
+            }else
+            {
+                checkedListBox1.Enabled = false;
+=======
+            Dictionary<DateTime, double[]> dict = serviceClient.GetSumInformationBetweenDates(dateTimePicker1.Value.Date, dateTimePicker2.Value.Date, "PH");
+>>>>>>> origin/master
 
             string result = "";
             foreach (var week in dict.Keys)
@@ -103,9 +138,41 @@ namespace SmartH2O_SeeAPP
             if (result.Length == 0)
             {
                 result = "No Data Found";
+>>>>>>> origin/master
             }
+        }
 
+<<<<<<< HEAD
             textBox1.Text = result;*/
+=======
+        private void comboBoxLogs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            groupBoxLogsBetweenDates.Visible = false;
+            groupBoxLogsDaily.Visible = false;
+            groupBoxLogsWeekly.Visible = false;
+
+            if (comboBoxLogs.SelectedIndex == 0)
+            {
+                groupBoxLogsDaily.Visible = true;
+            }
+            else if (comboBoxLogs.SelectedIndex == 1)
+            {
+                groupBoxLogsBetweenDates.Visible = true;
+            }
+            else if (comboBoxLogs.SelectedIndex == 2)
+            {
+                groupBoxLogsWeekly.Visible = true;
+            }
+        }
+
+        private void buttonLogsDaily_Click(object sender, EventArgs e)
+        {
+            dataGridViewLogs.Rows.Clear();
+            Service1Client serviceClient = new Service1Client();
+            //escolham dia 15 de dezembro porque só temos registos nesse dia por enquanto
+            string date = dateTimePickerLogsDaily.Value.ToString("dd/MM/yyyy");
+            string[] sum = serviceClient.GetSumInformationAtDay(date, "PH");
+>>>>>>> origin/master
 
             int i = 0;
             foreach (var hour in sum)

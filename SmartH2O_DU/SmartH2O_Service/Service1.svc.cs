@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+<<<<<<< HEAD
+using System.IO;
+=======
 using System.Globalization;
+>>>>>>> origin/master
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -19,18 +23,31 @@ namespace SmartH2O_Service
         alguem que se dê ao trabalho de ver como se faz o caminho relativo a partir do diretorio solution
         mas se nao vos apetecer façam o caminho absoluto como eu depois de o adaptarem.*/
 
+<<<<<<< HEAD
+        //string FILEPATH = @"D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\param-data.xml";
+        //string FILEPATH = @"C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\param-data.xml";
+        //string FILEPATH = @"D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\param-data.xml";
+        string FILEPATH = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\param-data.xml");
+        
+=======
        
         string FILEPATH = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\param-data.xml");
         
 
+>>>>>>> origin/master
         //devolve string agora para testar
         public List<string> GetSumInformationAtDay(string day, string elem)
         {
 
             XmlDocument doc = new XmlDocument();
             doc.Load(FILEPATH);
+<<<<<<< HEAD
+            //usem o select nodes depois
+            XmlNodeList nodes = (doc.SelectNodes(" / sensors/sensor[@element='" + elem + "'][contains(date,'" + day + "')]"));
+=======
 
             XmlNodeList nodes = (doc.SelectNodes("/sensors/sensor[@element='" + elem + "'][contains(date,'" + day + "')]"));
+>>>>>>> origin/master
             List<double>[] values = new List<double>[24];
             List<string> result = new List<string>();
             for (int i = 0; i < 24; i++)

@@ -8,4 +8,13 @@ C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Lib\obj\Debug\Lib.dll
 C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Lib\obj\Debug\Lib.pdb
 D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Lib\bin\Debug\Lib.dll.config
 D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Lib\obj\Debug\Lib.csprojResolveAssemblyReference.cache
+<<<<<<< HEAD
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\Lib\bin\Debug\Lib.dll.config
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\Lib\bin\Debug\Lib.dll
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\Lib\bin\Debug\Lib.pdb
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\Lib\obj\Debug\Lib.csprojResolveAssemblyReference.cache
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\Lib\obj\Debug\Lib.dll
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\Lib\obj\Debug\Lib.pdb
+=======
 C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Lib\bin\Debug\Lib.dll.config
+>>>>>>> origin/master
