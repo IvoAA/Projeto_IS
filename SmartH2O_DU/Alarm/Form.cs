@@ -20,10 +20,12 @@ namespace Alarm
         {
             public string condition { get; set; }
             public double value { get; set; }
+            public double valueMax { get; set; }
             public string errorMessage { get; set; }
         }
 
         Dictionary<string, List<Trigger>> triggers;
+        bool on = false;
 
         public Form()
         {
@@ -45,18 +47,41 @@ namespace Alarm
         void ReadXmlTriggers()
         {
             XmlDocument doc = new XmlDocument();
-
+            triggers = new Dictionary<string, List<Trigger>>();
             try
             {
                 doc.Load("trigger-rules.xml");
-                XmlNodeList nodes = doc.SelectNodes("/triggers/sensorode");
+                XmlNodeList nodes = doc.SelectNodes("/triggers/sensor[@active='true']");
                 foreach (XmlNode node in nodes)
                 {
-
+                    List<Trigger> t = new List<Trigger>();
+                    string nodeName = node.Attributes["node"].Value;
+                    foreach (XmlNode trig in node.ChildNodes)
+                    {
+                        if (trig.Attributes["active"].InnerText == "true")
+                        {
+                            t.Add(new Trigger
+                            {
+                                condition = trig.FirstChild.InnerText,
+                                value = double.Parse(trig.ChildNodes[1].InnerText),
+                                valueMax = trig.FirstChild.InnerText == "between" ? double.Parse(trig.ChildNodes[2].InnerText) : -1,
+                                errorMessage = trig.LastChild.InnerText
+                            });
+                           
+                        }
+                    
+                        
+                    }
+                    if (triggers.ContainsKey(node.Attributes["node"].InnerText))
+                    {
+                        triggers[nodeName] = t;
+                    }else
+                    {
+                        triggers.Add(nodeName, t);
+                    }
                 }
-
-                doc.SelectNodes("/ triggers / sensor[@node = "PH"] / alarm[@active = "true"]")
-
+                on = true;
+               
             }
             catch (Exception)
             {
@@ -68,12 +93,17 @@ namespace Alarm
         void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
             String data = Encoding.UTF8.GetString(e.Message);
-            /*this.Invoke((MethodInvoker)delegate
-            {
-                textBoxNotifications.Text += "Received = " + data + " on topic " + e.Topic + Environment.NewLine;
-            });
-            */
 
+            checkTriggers(data);
+
+        }
+
+        private void checkTriggers()
+        {
+            if (on)
+            {
+
+            }
         }
 
         void ReceiveData()

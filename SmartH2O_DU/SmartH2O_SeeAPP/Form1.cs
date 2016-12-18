@@ -16,35 +16,82 @@ namespace SmartH2O_SeeAPP
         public Form1()
         {
             InitializeComponent();
+            comboBoxLogs.SelectedIndex = 0;
+            groupBoxLogsDaily.Location = new Point(54, 44);
+            groupBoxLogsWeekly.Location = new Point(54, 44);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonLogsBetweenDates_Click(object sender, EventArgs e)
         {
-            Service1Client serviceClient = new Service1Client();
-            // -----------------------------------------------------------------------------------GetSumInformationByWeek
-            /*Dictionary<int, double[]> dict = serviceClient.GetSumInformationByWeek("PH");
 
-            string result = "";
-            foreach (var week in dict.Keys)
-            {
-                double[] sums = dict[week];
-                result += "[" + week + "] Min: " + sums[0] + " Max: " + sums[1] + " Avg: " + sums[2] + Environment.NewLine;
-            }
-            */
-            /*// -----------------------------------------------------------------------------------GetSumInformationAtDay            
+            /*Service1Client serviceClient = new Service1Client();
+
             //escolham dia 15 de dezembro porque só temos registos nesse dia por enquanto
-            string date = dateTimePicker1.Value.ToString("dd/MM/yyyy");
+            string date = dateTimePickerLogsStartingDate.Value.ToString("dd/MM/yyyy");
             string[] sum = serviceClient.GetSumInformationAtDay(date, "PH");
-            string result = "";
 
             int i = 0;
             foreach (var hour in sum)
             {
+                this.dataGridViewLogs.Rows.Add();
                 string[] sums = hour.Split(';');
-                result += "[" + sums[0] + "H - " + (int.Parse(sums[0])+1) + "H] Min: " + sums[1] + " Max: " + sums[2] + " Avg: " + sums[3] + Environment.NewLine;
+                dataGridViewLogs.Rows[i].Cells[0].Value = "PH";//Exemplo
+                dataGridViewLogs.Rows[i].Cells[1].Value = sums[0];
+                dataGridViewLogs.Rows[i].Cells[2].Value = sums[1];
+                dataGridViewLogs.Rows[i].Cells[3].Value = sums[2];
+                dataGridViewLogs.Rows[i].Cells[4].Value = sums[3];
                 i++;
             }*/
-            Dictionary<DateTime, double[]> dict = serviceClient.GetSumInformationBetweenDates(dateTimePicker1.Value.Date, dateTimePicker2.Value.Date, "PH");
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxAll.Checked == false)
+            {
+                checkedListBox1.Enabled = true;
+            }
+            else
+            {
+                checkedListBox1.Enabled = false;
+
+            }
+        }
+
+        private void comboBoxLogs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            groupBoxLogsBetweenDates.Visible = false;
+            groupBoxLogsDaily.Visible = false;
+            groupBoxLogsWeekly.Visible = false;
+
+            if (comboBoxLogs.SelectedIndex == 0)
+            {
+                groupBoxLogsDaily.Visible = true;
+            }
+            else if (comboBoxLogs.SelectedIndex == 1)
+            {
+                groupBoxLogsBetweenDates.Visible = true;
+            }
+            else if (comboBoxLogs.SelectedIndex == 2)
+            {
+                groupBoxLogsWeekly.Visible = true;
+            }
+        }
+
+        private void buttonLogsDaily_Click(object sender, EventArgs e)
+        {
+            dataGridViewLogs.Rows.Clear();
+            Service1Client serviceClient = new Service1Client();
+            //escolham dia 15 de dezembro porque só temos registos nesse dia por enquanto
+            string date = dateTimePickerLogsDaily.Value.ToString("dd/MM/yyyy");
+            string[] sum = serviceClient.GetSumInformationAtDay(date, "PH");
+
+           /* Dictionary<DateTime, double[]> dict = serviceClient.GetSumInformationBetweenDates(dateTimePicker1.Value.Date, dateTimePicker2.Value.Date, "PH");
 
             string result = "";
             foreach (var week in dict.Keys)
@@ -58,12 +105,21 @@ namespace SmartH2O_SeeAPP
                 result = "No Data Found";
             }
 
-            textBox1.Text = result;
-        }
+            textBox1.Text = result;*/
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            int i = 0;
+            foreach (var hour in sum)
+            {
+                this.dataGridViewLogs.Rows.Add();
+                string[] sums = hour.Split(';');
+                dataGridViewLogs.Rows[i].Cells[0].Value = "PH";//Exemplo
+                dataGridViewLogs.Rows[i].Cells[1].Value = sums[0];
+                dataGridViewLogs.Rows[i].Cells[2].Value = sums[1];
+                dataGridViewLogs.Rows[i].Cells[3].Value = sums[2];
+                dataGridViewLogs.Rows[i].Cells[4].Value = sums[3];
+                i++;
+            }
         }
     }
 }
+

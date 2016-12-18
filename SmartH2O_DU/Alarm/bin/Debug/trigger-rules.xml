@@ -31,7 +31,7 @@
       <error-message>NH3 between 5 and 9</error-message>
     </alarm>
   </sensor>
-  <sensor node="CI2">
+  <sensor node="CI2" active="true">
     <alarm active="true">
       <condition>greater than</condition>
       <value>10</value>
