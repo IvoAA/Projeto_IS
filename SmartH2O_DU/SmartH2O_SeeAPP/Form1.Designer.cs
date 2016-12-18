@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             this.buttonLogsBetweenDates = new System.Windows.Forms.Button();
             this.dateTimePickerLogsStartingDate = new System.Windows.Forms.DateTimePicker();
             this.labelStartingDate = new System.Windows.Forms.Label();
@@ -71,6 +72,12 @@
             this.groupBoxLogsWeekly.SuspendLayout();
             this.groupBoxLogsDaily.SuspendLayout();
             this.groupBoxLogsBetweenDates.SuspendLayout();
+=======
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+>>>>>>> origin/master
             this.SuspendLayout();
             // 
             // buttonLogsBetweenDates
@@ -422,12 +429,27 @@
             this.labelLogsDaily.TabIndex = 15;
             this.labelLogsDaily.Text = "Date:";
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(370, 27);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(987, 575);
             this.Controls.Add(this.tabControl1);
+=======
+            this.ClientSize = new System.Drawing.Size(671, 333);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button1);
+>>>>>>> origin/master
             this.Name = "Form1";
             this.Text = "SmartH2O Statistics-Visualizer";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -449,6 +471,7 @@
 
         #endregion
 
+<<<<<<< HEAD
         private System.Windows.Forms.Button buttonLogsBetweenDates;
         private System.Windows.Forms.DateTimePicker dateTimePickerLogsStartingDate;
         private System.Windows.Forms.Label labelStartingDate;
@@ -484,6 +507,12 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label labelLogsWeekly;
         private System.Windows.Forms.Label labelLogsDaily;
+=======
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+>>>>>>> origin/master
     }
 }
 

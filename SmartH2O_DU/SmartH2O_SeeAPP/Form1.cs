@@ -23,7 +23,22 @@ namespace SmartH2O_SeeAPP
 
         private void buttonLogsBetweenDates_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             /*Service1Client serviceClient = new Service1Client();
+=======
+            Service1Client serviceClient = new Service1Client();
+            // -----------------------------------------------------------------------------------GetSumInformationByWeek
+            /*Dictionary<int, double[]> dict = serviceClient.GetSumInformationByWeek("PH");
+
+            string result = "";
+            foreach (var week in dict.Keys)
+            {
+                double[] sums = dict[week];
+                result += "[" + week + "] Min: " + sums[0] + " Max: " + sums[1] + " Avg: " + sums[2] + Environment.NewLine;
+            }
+            */
+            /*// -----------------------------------------------------------------------------------GetSumInformationAtDay            
+>>>>>>> origin/master
             //escolham dia 15 de dezembro porque só temos registos nesse dia por enquanto
             string date = dateTimePickerLogsStartingDate.Value.ToString("dd/MM/yyyy");
             string[] sum = serviceClient.GetSumInformationAtDay(date, "PH");
@@ -40,6 +55,7 @@ namespace SmartH2O_SeeAPP
                 dataGridViewLogs.Rows[i].Cells[4].Value = sums[3];
                 i++;
             }*/
+<<<<<<< HEAD
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -55,6 +71,20 @@ namespace SmartH2O_SeeAPP
             }else
             {
                 checkedListBox1.Enabled = false;
+=======
+            Dictionary<DateTime, double[]> dict = serviceClient.GetSumInformationBetweenDates(dateTimePicker1.Value.Date, dateTimePicker2.Value.Date, "PH");
+
+            string result = "";
+            foreach (var week in dict.Keys)
+            {
+                double[] sums = dict[week];
+                result += "[" + week + "] Min: " + sums[0] + " Max: " + sums[1] + " Avg: " + sums[2] + Environment.NewLine;
+            }
+
+            if (result.Length == 0)
+            {
+                result = "No Data Found";
+>>>>>>> origin/master
             }
         }
 

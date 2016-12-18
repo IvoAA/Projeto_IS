@@ -16,4 +16,34 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetSumInformationBetweenDates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="secondDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="elem" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSumInformationBetweenDatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetSumInformationBetweenDatesResult" nillable="true" type="q2:ArrayOfKeyValueOfdateTimeArrayOfdoublety7Ep6D1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSumInformationByWeek">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="elem" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSumInformationByWeekResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetSumInformationByWeekResult" nillable="true" type="q3:ArrayOfKeyValueOfintArrayOfdoublety7Ep6D1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
