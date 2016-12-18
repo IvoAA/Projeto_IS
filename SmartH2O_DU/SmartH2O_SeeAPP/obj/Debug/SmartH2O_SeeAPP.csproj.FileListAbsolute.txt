@@ -7,3 +7,12 @@ C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2
 C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.csproj.GenerateResource.Cache
 C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.exe
 C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.pdb
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_SeeAPP\bin\Debug\SmartH2O_SeeAPP.exe.config
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_SeeAPP\bin\Debug\SmartH2O_SeeAPP.exe
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_SeeAPP\bin\Debug\SmartH2O_SeeAPP.pdb
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.csprojResolveAssemblyReference.cache
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.Form1.resources
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.Properties.Resources.resources
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.csproj.GenerateResource.Cache
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.exe
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_SeeAPP\obj\Debug\SmartH2O_SeeAPP.pdb

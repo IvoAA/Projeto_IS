@@ -10,12 +10,54 @@ namespace Lib
 {
     public class HandlerXML
     {
-        public string XSDFilePath { get; set; }
-
-        public HandlerXML()
+        private bool isValid;
+        private String validateMessage;
+        public String ValidateMessage
         {
-            XSDFilePath = AppDomain.CurrentDomain.BaseDirectory.ToString() + @"sensor.xsd";
+            get { return validateMessage; }
         }
+        private String xsdFilePath;
+        private String xmlFilePath;
+
+        public HandlerXML(String xmlFile, String xsdFile)
+        {
+            xmlFilePath = xmlFile;
+            xsdFilePath = xsdFile;
+        }
+               
+        public bool ValidateXML(bool file)
+        {
+            isValid = true;
+            XmlDocument doc = new XmlDocument();
+            try
+            {
+                if (file)
+                {
+                    doc.Load(xmlFilePath);
+                }
+                else
+                {
+                    doc.LoadXml(xmlFilePath);
+                }
+                ValidationEventHandler eventH = new ValidationEventHandler(MyEvent);
+                doc.Schemas.Add(null, xsdFilePath);
+                doc.Validate(eventH);
+            }
+            catch (XmlException ex)
+            {
+                isValid = false;
+                validateMessage = string.Format("Error{0}", ex.ToString());
+            }
+
+            return isValid;
+        }
+
+        private void MyEvent(object sender, ValidationEventArgs args)
+        {
+            isValid = false;
+            validateMessage += string.Format("Error: {0}", args.Message);
+        }
+
 
         public XmlElement CreateXMLSensorFile(string message)
         {
@@ -41,37 +83,6 @@ namespace Lib
             sensor.AppendChild(d);
 
             return sensor;
-        }
-
-
-        private bool isValid = true;
-        public string ValidationMessage { get; set; }
-
-        public bool ValidateXML(string XML)
-        {
-            ValidationMessage = "Document Valid!";
-            isValid = true;
-            XmlDocument doc = new XmlDocument();
-            try
-            {
-                doc.LoadXml(XML);
-                ValidationEventHandler eventH = new ValidationEventHandler(MyEvent);
-                doc.Schemas.Add(null, XSDFilePath);
-                doc.Validate(eventH);
-            }
-            catch (XmlException ex)
-            {
-                isValid = false;
-                ValidationMessage = string.Format("Error{0}", ex.ToString());
-            }
-
-            return isValid;
-        }
-
-        private void MyEvent(object sender, ValidationEventArgs args)
-        {
-            isValid = false;
-            ValidationMessage = string.Format("Document not valid! {0}", args.Message);
         }
 
     }

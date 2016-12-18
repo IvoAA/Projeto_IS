@@ -18,9 +18,10 @@ namespace Data_Uploader
 
         private static void NewValue(string message)
         {
-            HandlerXML handlerXML = new HandlerXML();
 
+            HandlerXML handlerXML = new HandlerXML();
             XmlElement sensor = handlerXML.CreateXMLSensorFile(message);
+
 
             if (handlerXML.ValidateXML(sensor.OuterXml))
             {

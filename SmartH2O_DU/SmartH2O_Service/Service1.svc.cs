@@ -16,21 +16,49 @@ namespace SmartH2O_Service
         /*IMPORTANTE*************
         alguem que se dê ao trabalho de ver como se faz o caminho relativo a partir do diretorio solution
         mas se nao vos apetecer façam o caminho absoluto como eu depois de o adaptarem.*/
-        string FILEPATH =  @"C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\param-data.xml";
+
+        string FILEPATH = @"D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\param-data.xml";
+        //string FILEPATH = @"C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\param-data.xml";
+        //string FILEPATH = @"D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\param-data.xml";
+
         //devolve string agora para testar
-        public string GetSumInformationAtDay(string day)
+        public List<string> GetSumInformationAtDay(string day, string elem)
         {
             //SensorData s = null;
             XmlDocument doc = new XmlDocument();
             doc.Load(FILEPATH);
             //usem o select nodes depois
-            XmlNode node = (doc.SelectSingleNode("/sensors/sensor[contains(date,'" + day + " 17:58:13')]"));
-           
+            XmlNodeList nodes = (doc.SelectNodes("/sensors/sensor[@element='" + elem + "'][contains(date,'" + day + "')]"));
+            List<double>[] values = new List<double>[24];
+            List<string> result = new List<string>();
+            for (int i = 0; i < 24; i++)
+            {
+                values[i] = new List<double>();
+            }
 
 
+            foreach (XmlNode node in nodes)
+            {
+                int hour = int.Parse( node.ChildNodes[2].InnerText.Split(' ')[1].Substring(0,2) );
 
-            return node != null ? node.InnerXml : "Not found" ;
+                string value = node.ChildNodes[1].InnerText.Replace(".",",");
+                values[hour - 1].Add(double.Parse(value));
+            }
+
+            for (int i = 0; i < 24; i++)
+            {
+                if (values[i].Count > 0)
+                {
+                    double min = values[i].Min(), max = values[i].Max(), avg = values[i].Average();
+                    result.Add(i + ";" + min + ";" + max + ";" + avg);
+                    
+                }
+            }
+
+            return  result ;
 
         }
+
+
     }
 }

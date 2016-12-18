@@ -45,10 +45,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(71, 132);
+            this.textBox1.Location = new System.Drawing.Point(12, 127);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 97);
+            this.textBox1.Size = new System.Drawing.Size(488, 174);
             this.textBox1.TabIndex = 1;
             // 
             // dateTimePicker1
@@ -62,7 +62,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 256);
+            this.ClientSize = new System.Drawing.Size(671, 333);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);

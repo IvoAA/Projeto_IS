@@ -4,3 +4,9 @@ C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O_Service\bin\SmartH2O_Ser
 C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O_Service\obj\Debug\SmartH2O_Service.csprojResolveAssemblyReference.cache
 C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O_Service\obj\Debug\SmartH2O_Service.dll
 C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O_Service\obj\Debug\SmartH2O_Service.pdb
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_Service\bin\SmartH2O_Service.dll.config
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_Service\bin\SmartH2O_Service.dll
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_Service\bin\SmartH2O_Service.pdb
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_Service\obj\Debug\SmartH2O_Service.csprojResolveAssemblyReference.cache
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_Service\obj\Debug\SmartH2O_Service.dll
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_Service\obj\Debug\SmartH2O_Service.pdb

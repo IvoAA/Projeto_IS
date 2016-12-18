@@ -16,10 +16,10 @@ namespace SmartH2O_SeeAPP.SmartH2O_Service {
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetSumInformationAtDay", ReplyAction="http://tempuri.org/IService1/GetSumInformationAtDayResponse")]
-        string GetSumInformationAtDay(string day);
+        string[] GetSumInformationAtDay(string day, string elem);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetSumInformationAtDay", ReplyAction="http://tempuri.org/IService1/GetSumInformationAtDayResponse")]
-        System.Threading.Tasks.Task<string> GetSumInformationAtDayAsync(string day);
+        System.Threading.Tasks.Task<string[]> GetSumInformationAtDayAsync(string day, string elem);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -49,12 +49,12 @@ namespace SmartH2O_SeeAPP.SmartH2O_Service {
                 base(binding, remoteAddress) {
         }
         
-        public string GetSumInformationAtDay(string day) {
-            return base.Channel.GetSumInformationAtDay(day);
+        public string[] GetSumInformationAtDay(string day, string elem) {
+            return base.Channel.GetSumInformationAtDay(day, elem);
         }
         
-        public System.Threading.Tasks.Task<string> GetSumInformationAtDayAsync(string day) {
-            return base.Channel.GetSumInformationAtDayAsync(day);
+        public System.Threading.Tasks.Task<string[]> GetSumInformationAtDayAsync(string day, string elem) {
+            return base.Channel.GetSumInformationAtDayAsync(day, elem);
         }
     }
 }

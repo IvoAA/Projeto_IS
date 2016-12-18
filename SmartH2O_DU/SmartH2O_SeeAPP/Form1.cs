@@ -23,10 +23,22 @@ namespace SmartH2O_SeeAPP
             Service1Client serviceClient = new Service1Client();
             //escolham dia 15 de dezembro porque só temos registos nesse dia por enquanto
             string date = dateTimePicker1.Value.ToString("dd/MM/yyyy");
-            string s = serviceClient.GetSumInformationAtDay(date);
+            string[] sum = serviceClient.GetSumInformationAtDay(date, "PH");
+            string result = "";
 
-            textBox1.Text = s;
+            int i = 0;
+            foreach (var hour in sum)
+            {
+                string[] sums = hour.Split(';');
+                result += "[" + sums[0] + "H - " + (int.Parse(sums[0])+1) + "H] Min: " + sums[1] + " Max: " + sums[2] + " Avg: " + sums[3] + Environment.NewLine;
+                i++;
+            }
+            if(result.Length == 0)
+            {
+                result = "No Data On That Date";
+            }
 
+            textBox1.Text = result;
         }
 
         private void Form1_Load(object sender, EventArgs e)
