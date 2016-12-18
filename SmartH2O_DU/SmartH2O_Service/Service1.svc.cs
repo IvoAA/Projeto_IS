@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -25,10 +26,10 @@ namespace SmartH2O_Service
         //devolve string agora para testar
         public List<string> GetSumInformationAtDay(string day, string elem)
         {
-            //SensorData s = null;
+
             XmlDocument doc = new XmlDocument();
             doc.Load(FILEPATH);
-            //usem o select nodes depois
+
             XmlNodeList nodes = (doc.SelectNodes("/sensors/sensor[@element='" + elem + "'][contains(date,'" + day + "')]"));
             List<double>[] values = new List<double>[24];
             List<string> result = new List<string>();
@@ -40,9 +41,9 @@ namespace SmartH2O_Service
 
             foreach (XmlNode node in nodes)
             {
-                int hour = int.Parse( node.ChildNodes[2].InnerText.Split(' ')[1].Substring(0,2) );
+                int hour = int.Parse(node.ChildNodes[2].InnerText.Split(' ')[1].Substring(0, 2));
 
-                string value = node.ChildNodes[1].InnerText.Replace(".",",");
+                string value = node.ChildNodes[1].InnerText.Replace(".", ",");
                 values[hour - 1].Add(double.Parse(value));
             }
 
@@ -52,60 +53,98 @@ namespace SmartH2O_Service
                 {
                     double min = values[i].Min(), max = values[i].Max(), avg = values[i].Average();
                     result.Add(i + ";" + min + ";" + max + ";" + avg);
-                    
+
                 }
             }
 
-            return  result ;
+            return result;
 
         }
 
-        public List<string> GetSumInformationBetweenDates(DateTime firstDate, DateTime secondDate, string elem)
+        public Dictionary<DateTime, List<double>> GetSumInformationBetweenDates(DateTime firstDate, DateTime secondDate, string elem)
         {
             //SensorData s = null;
             XmlDocument doc = new XmlDocument();
             doc.Load(FILEPATH);
             //usem o select nodes depois
             XmlNodeList nodes = (doc.SelectNodes("/sensors/sensor[@element='PH']"));
-            
+            Dictionary<DateTime, List<double>> filteredNodes = new Dictionary<DateTime, List<double>>();
+        
             foreach (XmlNode node in nodes)
             {
-                if((Convert.ToDateTime(node.ChildNodes[2].InnerText.Split(' ')[0])) >= firstDate && 
-                    (Convert.ToDateTime(node.ChildNodes[2].InnerText.Split(' ')[0]) <= secondDate)) {
-                    FiltertedNodes
-                }
-
-                string value = node.ChildNodes[1].InnerText.Replace(".", ",");
-                values[hour - 1].Add(double.Parse(value));
-            }
-
-            List<double>[] values = new List<double>[24];
-            List<string> result = new List<string>();
-            for (int i = 0; i < 24; i++)
-            {
-                values[i] = new List<double>();
-            }
-
-
-            foreach (XmlNode node in nodes)
-            {
-                int hour = int.Parse( node.ChildNodes[2].InnerText.Split(' ')[1].Substring(0,2) );
-
-                string value = node.ChildNodes[1].InnerText.Replace(".",",");
-                values[hour - 1].Add(double.Parse(value));
-            }
-
-            for (int i = 0; i < 24; i++)
-            {
-                if (values[i].Count > 0)
+                DateTime date = (Convert.ToDateTime(node.ChildNodes[2].InnerText.Split(' ')[0]));
+                if (date >= firstDate &&
+                    (date <= secondDate))
                 {
-                    double min = values[i].Min(), max = values[i].Max(), avg = values[i].Average();
-                    result.Add(i + ";" + min + ";" + max + ";" + avg);
-                    
-                }
+                    string value = node.ChildNodes[1].InnerText.Replace(".", ",");
+                    filteredNodes[date].Add(double.Parse(value));
+                }   
+
             }
 
-            return  result ;
+            foreach (var day in filteredNodes.Keys)
+            {
+                List<double> vals = filteredNodes[day];
+                double min = vals.Min(), max = vals.Max(), avg = vals.Average();
+                vals.Clear();
+                vals.Add(min);
+                vals.Add(max);
+                vals.Add(avg);
+
+                filteredNodes[day] = vals;
+            }
+
+            return filteredNodes;
+
+
+        }
+
+        public Dictionary<int, List<double>> GetSumInformationByWeek(string elem)
+        {
+            GregorianCalendar cal = new GregorianCalendar(GregorianCalendarTypes.Localized);
+            XmlDocument doc = new XmlDocument();
+            doc.Load(FILEPATH);
+
+            XmlNodeList nodes = (doc.SelectNodes("/sensors/sensor[@element='" + elem + "']"));
+
+            Dictionary<int, List<double>> dict = new Dictionary<int, List<double>>();
+
+            foreach (XmlNode node in nodes)
+            {
+                DateTime day = Convert.ToDateTime(node.ChildNodes[2].InnerText.Split(' ')[0]);
+                int week = cal.GetWeekOfYear(day, CalendarWeekRule.FirstFullWeek, DayOfWeek.Monday);
+
+                double value = double.Parse(node.ChildNodes[1].InnerText.Replace(".", ","));
+                try
+                {
+                    List<double> vals = dict[week];
+
+                    vals.Add(value);
+
+                    dict[week] = vals;
+                }
+                catch (Exception)
+                {
+                    List < double > newList = new List<double>();
+                    newList.Add(value);
+                    dict.Add(week, newList);
+                }
+
+            }
+
+            foreach (int week in dict.Keys.ToList())
+            {
+                List<double> vals = dict[week];
+                double min = vals.Min(), max = vals.Max(), avg = vals.Average();
+                vals.Clear();
+                vals.Add(min);
+                vals.Add(max);
+                vals.Add(avg);
+
+                dict[week] = vals;
+            }
+
+            return dict;
         }
     }
 }

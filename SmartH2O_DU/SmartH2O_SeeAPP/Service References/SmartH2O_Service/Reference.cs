@@ -20,6 +20,18 @@ namespace SmartH2O_SeeAPP.SmartH2O_Service {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetSumInformationAtDay", ReplyAction="http://tempuri.org/IService1/GetSumInformationAtDayResponse")]
         System.Threading.Tasks.Task<string[]> GetSumInformationAtDayAsync(string day, string elem);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetSumInformationBetweenDates", ReplyAction="http://tempuri.org/IService1/GetSumInformationBetweenDatesResponse")]
+        System.Collections.Generic.Dictionary<System.DateTime, double[]> GetSumInformationBetweenDates(System.DateTime firstDate, System.DateTime secondDate, string elem);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetSumInformationBetweenDates", ReplyAction="http://tempuri.org/IService1/GetSumInformationBetweenDatesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<System.DateTime, double[]>> GetSumInformationBetweenDatesAsync(System.DateTime firstDate, System.DateTime secondDate, string elem);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetSumInformationByWeek", ReplyAction="http://tempuri.org/IService1/GetSumInformationByWeekResponse")]
+        System.Collections.Generic.Dictionary<int, double[]> GetSumInformationByWeek(string elem);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetSumInformationByWeek", ReplyAction="http://tempuri.org/IService1/GetSumInformationByWeekResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, double[]>> GetSumInformationByWeekAsync(string elem);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +67,22 @@ namespace SmartH2O_SeeAPP.SmartH2O_Service {
         
         public System.Threading.Tasks.Task<string[]> GetSumInformationAtDayAsync(string day, string elem) {
             return base.Channel.GetSumInformationAtDayAsync(day, elem);
+        }
+        
+        public System.Collections.Generic.Dictionary<System.DateTime, double[]> GetSumInformationBetweenDates(System.DateTime firstDate, System.DateTime secondDate, string elem) {
+            return base.Channel.GetSumInformationBetweenDates(firstDate, secondDate, elem);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<System.DateTime, double[]>> GetSumInformationBetweenDatesAsync(System.DateTime firstDate, System.DateTime secondDate, string elem) {
+            return base.Channel.GetSumInformationBetweenDatesAsync(firstDate, secondDate, elem);
+        }
+        
+        public System.Collections.Generic.Dictionary<int, double[]> GetSumInformationByWeek(string elem) {
+            return base.Channel.GetSumInformationByWeek(elem);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, double[]>> GetSumInformationByWeekAsync(string elem) {
+            return base.Channel.GetSumInformationByWeekAsync(elem);
         }
     }
 }

@@ -21,6 +21,17 @@ namespace SmartH2O_SeeAPP
         private void button1_Click(object sender, EventArgs e)
         {
             Service1Client serviceClient = new Service1Client();
+            // -----------------------------------------------------------------------------------GetSumInformationByWeek
+            Dictionary<int, double[]> dict = serviceClient.GetSumInformationByWeek("PH");
+
+            string result = "";
+            foreach (var week in dict.Keys)
+            {
+                double[] sums = dict[week];
+                result += "[" + week + "] Min: " + sums[0] + " Max: " + sums[1] + " Avg: " + sums[2] + Environment.NewLine;
+            }
+
+            /*// -----------------------------------------------------------------------------------GetSumInformationAtDay            
             //escolham dia 15 de dezembro porque só temos registos nesse dia por enquanto
             string date = dateTimePicker1.Value.ToString("dd/MM/yyyy");
             string[] sum = serviceClient.GetSumInformationAtDay(date, "PH");
@@ -32,10 +43,12 @@ namespace SmartH2O_SeeAPP
                 string[] sums = hour.Split(';');
                 result += "[" + sums[0] + "H - " + (int.Parse(sums[0])+1) + "H] Min: " + sums[1] + " Max: " + sums[2] + " Avg: " + sums[3] + Environment.NewLine;
                 i++;
-            }
+            }*/
+
+
             if(result.Length == 0)
             {
-                result = "No Data On That Date";
+                result = "No Data Found";
             }
 
             textBox1.Text = result;
