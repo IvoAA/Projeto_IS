@@ -14,6 +14,9 @@ namespace SmartH2O_Service
     {
 
         [OperationContract]
+        Dictionary<int, List<double>> GetSumInformationByWeek(string elem);
+
+        [OperationContract]
         List<string> GetSumInformationAtDay(string day, string elem);
 
         // TODO: Add your service operations here

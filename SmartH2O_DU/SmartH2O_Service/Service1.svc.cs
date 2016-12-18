@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -24,10 +25,10 @@ namespace SmartH2O_Service
         //devolve string agora para testar
         public List<string> GetSumInformationAtDay(string day, string elem)
         {
-            //SensorData s = null;
+
             XmlDocument doc = new XmlDocument();
             doc.Load(FILEPATH);
-            //usem o select nodes depois
+
             XmlNodeList nodes = (doc.SelectNodes("/sensors/sensor[@element='" + elem + "'][contains(date,'" + day + "')]"));
             List<double>[] values = new List<double>[24];
             List<string> result = new List<string>();
@@ -39,9 +40,9 @@ namespace SmartH2O_Service
 
             foreach (XmlNode node in nodes)
             {
-                int hour = int.Parse( node.ChildNodes[2].InnerText.Split(' ')[1].Substring(0,2) );
+                int hour = int.Parse(node.ChildNodes[2].InnerText.Split(' ')[1].Substring(0, 2));
 
-                string value = node.ChildNodes[1].InnerText.Replace(".",",");
+                string value = node.ChildNodes[1].InnerText.Replace(".", ",");
                 values[hour - 1].Add(double.Parse(value));
             }
 
@@ -51,14 +52,50 @@ namespace SmartH2O_Service
                 {
                     double min = values[i].Min(), max = values[i].Max(), avg = values[i].Average();
                     result.Add(i + ";" + min + ";" + max + ";" + avg);
-                    
+
                 }
             }
 
-            return  result ;
+            return result;
 
         }
 
+        public Dictionary<int, List<double>> GetSumInformationByWeek(string elem)
+        {
+            GregorianCalendar cal = new GregorianCalendar(GregorianCalendarTypes.Localized);
+            XmlDocument doc = new XmlDocument();
+            doc.Load(FILEPATH);
 
+            XmlNodeList nodes = (doc.SelectNodes("/sensors/sensor[@element='" + elem + "']"));
+
+            Dictionary<int, List<double>> dict = new Dictionary<int, List<double>>();
+
+            foreach (XmlNode node in nodes)
+            {
+                DateTime day = Convert.ToDateTime(node.ChildNodes[2].InnerText.Split(' ')[0]);
+                int week = cal.GetWeekOfYear(day, CalendarWeekRule.FirstFullWeek, DayOfWeek.Monday);
+
+                List<double> vals = dict[week];
+
+                string value = node.ChildNodes[1].InnerText.Replace(".", ",");
+                vals.Add(double.Parse(value));
+
+                dict[week] = vals;
+            }
+
+            foreach (var week in dict.Keys)
+            {
+                List<double> vals = dict[week];
+                double min = vals.Min(), max = vals.Max(), avg = vals.Average();
+                vals.Clear();
+                vals.Add(min);
+                vals.Add(max);
+                vals.Add(avg);
+
+                dict[week] = vals;
+            }
+
+            return dict;
+        }
     }
 }
