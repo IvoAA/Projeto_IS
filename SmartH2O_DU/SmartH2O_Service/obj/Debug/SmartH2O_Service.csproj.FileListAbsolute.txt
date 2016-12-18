@@ -10,3 +10,9 @@ D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_Service\bin\SmartH2
 D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_Service\obj\Debug\SmartH2O_Service.csprojResolveAssemblyReference.cache
 D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_Service\obj\Debug\SmartH2O_Service.dll
 D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O_Service\obj\Debug\SmartH2O_Service.pdb
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O_Service\bin\SmartH2O_Service.dll.config
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O_Service\bin\SmartH2O_Service.dll
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O_Service\bin\SmartH2O_Service.pdb
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O_Service\obj\Debug\SmartH2O_Service.csprojResolveAssemblyReference.cache
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O_Service\obj\Debug\SmartH2O_Service.dll
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O_Service\obj\Debug\SmartH2O_Service.pdb
