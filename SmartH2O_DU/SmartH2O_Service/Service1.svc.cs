@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using System.Xml;
+using System.IO;
 
 namespace SmartH2O_Service
 {
@@ -17,9 +18,9 @@ namespace SmartH2O_Service
         alguem que se dê ao trabalho de ver como se faz o caminho relativo a partir do diretorio solution
         mas se nao vos apetecer façam o caminho absoluto como eu depois de o adaptarem.*/
 
-        string FILEPATH = @"D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\param-data.xml";
-        //string FILEPATH = @"C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\param-data.xml";
-        //string FILEPATH = @"D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\param-data.xml";
+       
+        string FILEPATH = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\param-data.xml");
+        
 
         //devolve string agora para testar
         public List<string> GetSumInformationAtDay(string day, string elem)
@@ -59,6 +60,52 @@ namespace SmartH2O_Service
 
         }
 
+        public List<string> GetSumInformationBetweenDates(DateTime firstDate, DateTime secondDate, string elem)
+        {
+            //SensorData s = null;
+            XmlDocument doc = new XmlDocument();
+            doc.Load(FILEPATH);
+            //usem o select nodes depois
+            XmlNodeList nodes = (doc.SelectNodes("/sensors/sensor[@element='PH']"));
+            
+            foreach (XmlNode node in nodes)
+            {
+                if((Convert.ToDateTime(node.ChildNodes[2].InnerText.Split(' ')[0])) >= firstDate && 
+                    (Convert.ToDateTime(node.ChildNodes[2].InnerText.Split(' ')[0]) <= secondDate)) {
+                    FiltertedNodes
+                }
 
+                string value = node.ChildNodes[1].InnerText.Replace(".", ",");
+                values[hour - 1].Add(double.Parse(value));
+            }
+
+            List<double>[] values = new List<double>[24];
+            List<string> result = new List<string>();
+            for (int i = 0; i < 24; i++)
+            {
+                values[i] = new List<double>();
+            }
+
+
+            foreach (XmlNode node in nodes)
+            {
+                int hour = int.Parse( node.ChildNodes[2].InnerText.Split(' ')[1].Substring(0,2) );
+
+                string value = node.ChildNodes[1].InnerText.Replace(".",",");
+                values[hour - 1].Add(double.Parse(value));
+            }
+
+            for (int i = 0; i < 24; i++)
+            {
+                if (values[i].Count > 0)
+                {
+                    double min = values[i].Min(), max = values[i].Max(), avg = values[i].Average();
+                    result.Add(i + ";" + min + ";" + max + ";" + avg);
+                    
+                }
+            }
+
+            return  result ;
+        }
     }
 }
