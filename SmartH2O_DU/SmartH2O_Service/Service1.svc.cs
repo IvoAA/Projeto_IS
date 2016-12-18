@@ -76,13 +76,28 @@ namespace SmartH2O_Service
                 if (date >= firstDate &&
                     (date <= secondDate))
                 {
-                    string value = node.ChildNodes[1].InnerText.Replace(".", ",");
-                    filteredNodes[date].Add(double.Parse(value));
+
+                    double value = double.Parse(node.ChildNodes[1].InnerText.Replace(".", ","));
+                    if (filteredNodes.ContainsKey(date))
+                    {
+                        List<double> vals = filteredNodes[date];
+
+                        vals.Add(value);
+
+                        filteredNodes[date] = vals;
+                    }
+                    else
+                    {
+                        List<double> newList = new List<double>();
+                        newList.Add(value);
+                        filteredNodes.Add(date, newList);
+                    }
+                    filteredNodes[date].Add(value);
                 }   
 
             }
 
-            foreach (var day in filteredNodes.Keys)
+            foreach (var day in filteredNodes.Keys.ToList())
             {
                 List<double> vals = filteredNodes[day];
                 double min = vals.Min(), max = vals.Max(), avg = vals.Average();
@@ -115,7 +130,7 @@ namespace SmartH2O_Service
                 int week = cal.GetWeekOfYear(day, CalendarWeekRule.FirstFullWeek, DayOfWeek.Monday);
 
                 double value = double.Parse(node.ChildNodes[1].InnerText.Replace(".", ","));
-                try
+                if (dict.ContainsKey(week))
                 {
                     List<double> vals = dict[week];
 
@@ -123,9 +138,9 @@ namespace SmartH2O_Service
 
                     dict[week] = vals;
                 }
-                catch (Exception)
+                else
                 {
-                    List < double > newList = new List<double>();
+                    List<double> newList = new List<double>();
                     newList.Add(value);
                     dict.Add(week, newList);
                 }

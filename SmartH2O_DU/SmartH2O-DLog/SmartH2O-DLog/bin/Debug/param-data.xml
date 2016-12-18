@@ -104,4 +104,44 @@
     <value>8.1</value>
     <date>15/12/2016 22:06:48</date>
   </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>6.2</value>
+    <date>18/12/2016 20:19:14</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.20</value>
+    <date>18/12/2016 20:19:16</date>
+  </sensor>
+  <sensor element="CI2">
+    <id>3</id>
+    <value>11.5</value>
+    <date>18/12/2016 20:19:17</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>6.2</value>
+    <date>18/12/2016 20:19:18</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.11</value>
+    <date>18/12/2016 20:19:19</date>
+  </sensor>
+  <sensor element="CI2">
+    <id>3</id>
+    <value>10.4</value>
+    <date>18/12/2016 20:19:20</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.2</value>
+    <date>18/12/2016 20:19:21</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.73</value>
+    <date>18/12/2016 20:19:22</date>
+  </sensor>
 </sensors>

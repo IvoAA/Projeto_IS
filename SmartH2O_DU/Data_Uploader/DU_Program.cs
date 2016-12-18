@@ -18,18 +18,41 @@ namespace Data_Uploader
 
         private static void NewValue(string message)
         {
+            
+            XmlElement sensor = DataToXml(message);
 
-            HandlerXML handlerXML = new HandlerXML();
-            XmlElement sensor = handlerXML.CreateXMLSensorFile(message);
 
+            Console.WriteLine("Channel: " + sensor.GetAttribute("element"));
+            Console.WriteLine("Data = " + sensor.OuterXml);
+            SendValue(sensor);
+            
 
-            if (handlerXML.ValidateXML(sensor.OuterXml))
-            {
-                Console.WriteLine("Channel: " + sensor.GetAttribute("element"));
-                Console.WriteLine("Data = " + sensor.OuterXml);
-                SendValue(sensor);
-            }
+        }
 
+        public static XmlElement DataToXml(string message)
+        {
+
+            string[] s = message.Split(';');
+            string date = DateTime.Now.ToString();
+
+            XmlDocument doc = new XmlDocument();
+
+            XmlElement sensor = doc.CreateElement("sensor");
+            sensor.SetAttribute("element", s[1]);
+
+            XmlElement i = doc.CreateElement("id");
+            i.InnerText = s[0];
+            sensor.AppendChild(i);
+
+            XmlElement v = doc.CreateElement("value");
+            v.InnerText = s[2];
+            sensor.AppendChild(v);
+
+            XmlElement d = doc.CreateElement("date");
+            d.InnerText = date;
+            sensor.AppendChild(d);
+
+            return sensor;
         }
 
         private static void SendValue(XmlElement sensor)

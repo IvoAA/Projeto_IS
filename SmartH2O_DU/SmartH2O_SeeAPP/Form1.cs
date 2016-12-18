@@ -22,7 +22,7 @@ namespace SmartH2O_SeeAPP
         {
             Service1Client serviceClient = new Service1Client();
             // -----------------------------------------------------------------------------------GetSumInformationByWeek
-            Dictionary<int, double[]> dict = serviceClient.GetSumInformationByWeek("PH");
+            /*Dictionary<int, double[]> dict = serviceClient.GetSumInformationByWeek("PH");
 
             string result = "";
             foreach (var week in dict.Keys)
@@ -30,7 +30,7 @@ namespace SmartH2O_SeeAPP
                 double[] sums = dict[week];
                 result += "[" + week + "] Min: " + sums[0] + " Max: " + sums[1] + " Avg: " + sums[2] + Environment.NewLine;
             }
-
+            */
             /*// -----------------------------------------------------------------------------------GetSumInformationAtDay            
             //escolham dia 15 de dezembro porque só temos registos nesse dia por enquanto
             string date = dateTimePicker1.Value.ToString("dd/MM/yyyy");
@@ -44,9 +44,16 @@ namespace SmartH2O_SeeAPP
                 result += "[" + sums[0] + "H - " + (int.Parse(sums[0])+1) + "H] Min: " + sums[1] + " Max: " + sums[2] + " Avg: " + sums[3] + Environment.NewLine;
                 i++;
             }*/
+            Dictionary<DateTime, double[]> dict = serviceClient.GetSumInformationBetweenDates(dateTimePicker1.Value.Date, dateTimePicker2.Value.Date, "PH");
 
+            string result = "";
+            foreach (var week in dict.Keys)
+            {
+                double[] sums = dict[week];
+                result += "[" + week + "] Min: " + sums[0] + " Max: " + sums[1] + " Avg: " + sums[2] + Environment.NewLine;
+            }
 
-            if(result.Length == 0)
+            if (result.Length == 0)
             {
                 result = "No Data Found";
             }
