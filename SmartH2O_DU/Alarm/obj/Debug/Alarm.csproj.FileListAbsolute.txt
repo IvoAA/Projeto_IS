@@ -2,7 +2,6 @@ D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Alarm\bin\Debug\Alarm.exe.co
 D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Alarm\bin\Debug\Alarm.exe
 D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Alarm\bin\Debug\Alarm.pdb
 D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Alarm\bin\Debug\M2Mqtt.Net.dll
-D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Alarm\bin\Debug\M2Mqtt.Net.pdb
 D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Alarm\obj\Debug\Alarm.csprojResolveAssemblyReference.cache
 D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Alarm\obj\Debug\Alarm.Form.resources
 D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Alarm\obj\Debug\Alarm.Properties.Resources.resources
@@ -19,3 +18,6 @@ C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Alarm\obj\Debug\Alarm.Properties.
 C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Alarm\obj\Debug\Alarm.csproj.GenerateResource.Cache
 C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Alarm\obj\Debug\Alarm.exe
 C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Alarm\obj\Debug\Alarm.pdb
+C:\Users\ASUS\Desktop\Projeto_IS\SmartH2O_DU\Alarm\bin\Debug\Alarm.exe.config
+C:\Users\ASUS\Desktop\Projeto_IS\SmartH2O_DU\Alarm\obj\Debug\Alarm.exe
+C:\Users\ASUS\Desktop\Projeto_IS\SmartH2O_DU\Alarm\obj\Debug\Alarm.pdb

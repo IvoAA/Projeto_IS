@@ -98,7 +98,7 @@ namespace Alarm
 
         }
 
-        private void checkTriggers()
+        private void checkTriggers(string data)
         {
             if (on)
             {

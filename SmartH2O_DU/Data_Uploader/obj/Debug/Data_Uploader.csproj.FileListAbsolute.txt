@@ -19,3 +19,6 @@ C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Data_Uploader\bin\Debug\Lib.pdb
 C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Data_Uploader\obj\Debug\Data_Uploader.csprojResolveAssemblyReference.cache
 C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Data_Uploader\obj\Debug\Data_Uploader.exe
 C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Data_Uploader\obj\Debug\Data_Uploader.pdb
+C:\Users\ASUS\Desktop\Projeto_IS\SmartH2O_DU\Data_Uploader\bin\Debug\Data_Uploader.exe.config
+C:\Users\ASUS\Desktop\Projeto_IS\SmartH2O_DU\Data_Uploader\obj\Debug\Data_Uploader.exe
+C:\Users\ASUS\Desktop\Projeto_IS\SmartH2O_DU\Data_Uploader\obj\Debug\Data_Uploader.pdb
