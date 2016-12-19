@@ -67,7 +67,7 @@ namespace SmartH2O_Service
             XmlDocument doc = new XmlDocument();
             doc.Load(FILEPATH);
             //usem o select nodes depois
-            XmlNodeList nodes = (doc.SelectNodes("/sensors/sensor[@element='PH']"));
+            XmlNodeList nodes = (doc.SelectNodes("/sensors/sensor[@element='" + elem + "']"));
             Dictionary<DateTime, List<double>> filteredNodes = new Dictionary<DateTime, List<double>>();
         
             foreach (XmlNode node in nodes)
