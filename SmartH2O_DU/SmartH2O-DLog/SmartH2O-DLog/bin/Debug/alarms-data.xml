@@ -1,1 +1,14 @@
-<alarms />
+<alarms>
+  <alarm node="PH">
+    <value>5</value>
+    <condition>less than 6</condition>
+    <error-message>PH less than 6</error-message>
+    <date>19/12/2016 16:40:17</date>
+  </alarm>
+  <alarm node="PH">
+    <value>5</value>
+    <condition>less than 6</condition>
+    <error-message>PH less than 6</error-message>
+    <date>19/12/2016 16:40:17</date>
+  </alarm>
+</alarms>

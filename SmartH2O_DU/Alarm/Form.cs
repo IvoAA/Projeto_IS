@@ -27,6 +27,7 @@ namespace Alarm
 
         Dictionary<string, List<Trigger>> triggers;
         bool on = false;
+        int counter;
 
         public Form()
         {
@@ -41,6 +42,7 @@ namespace Alarm
 
             // Mostrar Triggers no Form
             FillTreeView();
+            counter = 0;
 
             // Comecar a receber dados dos sensores
             ReceiveData();
@@ -190,6 +192,9 @@ namespace Alarm
                         if(fired.Count > 0)
                         {
                             fireTriggers(fired, node);
+                            counter += fired.Count; //será que está a concatenar? nao, no debug fez bem
+                            //  \/ dá erro aqui \/ wtff XD fuck 
+                            this.labelAlarms.BeginInvoke((MethodInvoker)delegate () { this.labelAlarms.Text = this.counter.ToString(); ; });
                         }
 
                     }
