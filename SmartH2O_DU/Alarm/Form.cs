@@ -156,7 +156,7 @@ namespace Alarm
 
                                 break;
                         }
-
+                        
                         fireTriggers(fired, node);
                     }
                 }
@@ -211,7 +211,7 @@ namespace Alarm
                 Console.WriteLine("Error connecting to message broker...");
                 return;
             }
-            m_cClient.Publish("alarm", Encoding.UTF8.GetBytes(triggers.OuterXml));
+            m_cClient.Publish("alarms", Encoding.UTF8.GetBytes(triggers.OuterXml));
             Console.WriteLine("Sent");
         }
 

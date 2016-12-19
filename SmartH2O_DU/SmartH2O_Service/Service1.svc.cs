@@ -15,9 +15,7 @@ namespace SmartH2O_Service
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        /*IMPORTANTE*************
-        alguem que se dê ao trabalho de ver como se faz o caminho relativo a partir do diretorio solution
-        mas se nao vos apetecer façam o caminho absoluto como eu depois de o adaptarem.*/
+        
 
        
         string FILEPATH = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\param-data.xml");

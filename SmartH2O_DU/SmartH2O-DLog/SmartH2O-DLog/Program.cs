@@ -53,7 +53,6 @@ MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, MqttMsgB
 
             Console.WriteLine("Received = " + Encoding.UTF8.GetString(e.Message) +
             " on topic " + e.Topic);
-
             organizeXML(e);
         }
 
@@ -94,36 +93,31 @@ MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, MqttMsgB
 
                         doc.Save("param-data.xml");
 
-                    }
+                } else { 
 
-                
+                        if (!File.Exists("alarms-data.xml"))
+                        {
+                            
+                            doc.AppendChild(doc.CreateElement("alarms"));
+                            doc.Save("alarms-data.xml");
+                        }
+                    
 
-                if ((e.Topic).Equals("alarms")) {
-
-                    if (!File.Exists("alarms-data.xml"))
-                    {
-
-                        XmlWriterSettings settings = new XmlWriterSettings();
-                        settings.Indent = true;
-                        // Save the document to a file and auto-indent the output.
-                        XmlWriter writer = XmlWriter.Create("alarms-data.xml", settings);
-                        doc.Save(writer);
-                    }
-                    else
-                    {
-
-                        doc.Load("alarms-data.xml");
+                        /*doc.Load("alarms-data.xml");
 
                         XmlNode root = doc.DocumentElement;
+                        XmlDocument aux = new XmlDocument();
+                        aux.InnerXml = xml;
+                        XmlNodeList alarms = aux.SelectNodes("/alarm");
 
-                        XmlDocumentFragment xmlDocFragment = doc.CreateDocumentFragment();
-                        xmlDocFragment.InnerXml = xml;
-
-                        root.AppendChild(xmlDocFragment);
+                        foreach(XmlNode alarm in alarms)
+                        {
+                            root.AppendChild(alarm);
+                        }
 
                         doc.Save("alarms-data.xml");
-
-                    }
+                        */
+                   
                 }
             }
             catch (Exception ex)
