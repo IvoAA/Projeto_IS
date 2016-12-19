@@ -141,68 +141,74 @@ namespace Alarm
                 {
                     doc.LoadXml(data);
                     List<Trigger> fired = new List<Trigger>();
-                    List<Trigger> nodeTriggers = new List<Trigger>();
                     XmlNode sensor = doc.SelectSingleNode("/sensor");
                     string node = sensor.Attributes["element"].Value;
                     double val = double.Parse(sensor["value"].InnerText.Replace('.', ','));
-                    nodeTriggers = triggers[node];
+                    Trigger[] nodeTriggers = new Trigger[triggers[node].Count];
+                    triggers[node].CopyTo(nodeTriggers);
+
+
                     foreach (var trigger in nodeTriggers)
                     {
-                        trigger.date = DateTime.Parse( sensor["date"].InnerText);
+                        Trigger t = new Trigger {
+                            date = DateTime.Parse(sensor["date"].InnerText),
+                            errorMessage = trigger.errorMessage
+                        } ;
                         switch (trigger.condition)
                         {
                             case "equals":
                                 if (val == trigger.value)
                                 {
-                                    trigger.condition += " " + trigger.value;
-                                    trigger.value = val;
-                                    fired.Add(trigger);
+                                    t.condition = trigger.condition + " " + trigger.value;
+                                    t.value = val;
+                                    fired.Add(t);
                                 }
 
                                 break;
                             case "less than":
                                 if (val < trigger.value)
                                 {
-                                    trigger.condition += " " + trigger.value;
-                                    trigger.value = val;
-                                    fired.Add(trigger);
+                                    t.condition = trigger.condition + " " + trigger.value;
+                                    t.value = val;
+                                    fired.Add(t);
                                 }
 
                                 break;
                             case "greater than":
                                 if (val > trigger.value)
                                 {
-                                    trigger.condition += " " + trigger.value;
-                                    trigger.value = val;
-                                    fired.Add(trigger);
+                                    t.condition = trigger.condition + " " + trigger.value;
+                                    t.value = val;
+                                    fired.Add(t);
                                 }
 
                                 break;
                             case "between":
                                 if (val > trigger.value && val < trigger.valueMax)
                                 {
-                                    trigger.condition += " " + trigger.value + " and " + trigger.valueMax;
-                                    trigger.value = val;
-                                    fired.Add(trigger);
+                                    t.condition = trigger.condition + " " + trigger.value + " and " + trigger.valueMax;
+                                    t.value = val;
+                                    fired.Add(t);
                                 }
 
                                 break;
                         }
-                        
-                        if(fired.Count > 0)
-                        {
-                            fireTriggers(fired, node);
-                            counter += fired.Count; //será que está a concatenar? nao, no debug fez bem
-                            //  \/ dá erro aqui \/ wtff XD fuck 
-                            this.labelAlarms.BeginInvoke((MethodInvoker)delegate () { this.labelAlarms.Text = this.counter.ToString(); ; });
-                        }
 
+                    }
+
+
+                    if (fired.Count > 0)
+                    {
+                        fireTriggers(fired, node);
+                        counter += fired.Count; 
+                        this.labelAlarms.BeginInvoke((MethodInvoker)delegate () { this.labelAlarms.Text = this.counter.ToString(); ; });
                     }
                 }
                 catch (Exception)
                 {
 
-                    throw new Exception("Error in checkTriggers()");
+                    throw;
+                    //throw new Exception("Error in checkTriggers()");
                 }
             }
         }
@@ -211,30 +217,31 @@ namespace Alarm
         {
 
             XmlDocument doc = new XmlDocument();
-            
+            XmlElement alarm = doc.CreateElement("alarm");
+            doc.AppendChild(alarm);
             foreach (Trigger t in fired)
             {
 
-                XmlElement alarm = doc.CreateElement("alarm");
-                alarm.SetAttribute("node", node);
+                XmlElement trigger = doc.CreateElement("triggered");
+                trigger.SetAttribute("node", node);
 
                 XmlElement val = doc.CreateElement("value");
                 val.InnerText = t.value.ToString();
-                alarm.AppendChild(val);
+                trigger.AppendChild(val);
 
                 XmlElement cond = doc.CreateElement("condition");
                 cond.InnerText = t.condition;
-                alarm.AppendChild(cond);
+                trigger.AppendChild(cond);
 
                 XmlElement err = doc.CreateElement("error-message");
                 err.InnerText = t.errorMessage;
-                alarm.AppendChild(err);
+                trigger.AppendChild(err);
 
                 XmlElement date = doc.CreateElement("date");
                 date.InnerText = t.date.ToString();
-                alarm.AppendChild(date);
+                trigger.AppendChild(date);
 
-                doc.AppendChild(alarm);
+                alarm.AppendChild(trigger);
             }
             
             SendData(doc);

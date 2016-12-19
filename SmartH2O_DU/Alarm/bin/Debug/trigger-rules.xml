@@ -8,8 +8,8 @@
     </alarm>
     <alarm active="true">
       <condition>less than</condition>
-      <value>6</value>
-      <error-message>PH less than 6</error-message>
+      <value>12</value>
+      <error-message>PH less than 12</error-message>
     </alarm>
     <alarm active="true">
       <condition>between</condition>
@@ -18,30 +18,30 @@
       <error-message>PH between 7 and 8</error-message>
     </alarm>
   </sensor>
-  <sensor node="NH3" active="true">
-    <alarm active="true">
-      <condition>greater than</condition>
-      <value>10</value>
-      <error-message>NH3 greater than 10</error-message>
-    </alarm>
-    <alarm active="true">
-      <condition>between</condition>
-      <valueMin>5</valueMin>
-      <valueMax>9</valueMax>
-      <error-message>NH3 between 5 and 9</error-message>
-    </alarm>
-  </sensor>
   <sensor node="CI2" active="true">
     <alarm active="true">
       <condition>greater than</condition>
-      <value>10</value>
-      <error-message>CI2 greater than 10</error-message>
+      <value>6,5</value>
+      <error-message>CI2 greater than 6,5</error-message>
     </alarm>
     <alarm active="true">
       <condition>between</condition>
-      <valueMin>5</valueMin>
-      <valueMax>9</valueMax>
-      <error-message>NH3 between 5 and 9</error-message>
+      <valueMin>1</valueMin>
+      <valueMax>10</valueMax>
+      <error-message>CI2 between 1 and 10</error-message>
+    </alarm>
+  </sensor>
+  <sensor node="NH3" active="true">
+    <alarm active="true">
+      <condition>greater than</condition>
+      <value>0,65</value>
+      <error-message>NH3 greater than 0,65</error-message>
+    </alarm>
+    <alarm active="true">
+      <condition>between</condition>
+      <valueMin>0,3</valueMin>
+      <valueMax>1</valueMax>
+      <error-message>NH3 between 0,3 and 1</error-message>
     </alarm>
   </sensor>
 </triggers>

@@ -1,6 +1,91 @@
 <alarms>
-  <alarm node="PH">
+  <trigger node="NH3">
+    <value>1,6</value>
+    <condition>greater than 0,65</condition>
+    <error-message>NH3 greater than 0,65</error-message>
+    <date>19/12/2016 20:35:43</date>
+  </trigger>
+  <trigger node="CI2">
+    <value>8,1</value>
+    <condition>greater than 6,5</condition>
+    <error-message>CI2 greater than 6,5</error-message>
+    <date>19/12/2016 20:35:44</date>
+  </trigger>
+  <trigger node="CI2">
+    <value>8,1</value>
+    <condition>between 1 and 10</condition>
+    <error-message>CI2 between 1 and 10</error-message>
+    <date>19/12/2016 20:35:44</date>
+  </trigger>
+  <trigger node="PH">
+    <value>6,5</value>
+    <condition>less than 12</condition>
+    <error-message>PH less than 12</error-message>
+    <date>19/12/2016 20:35:45</date>
+  </trigger>
+  <trigger node="NH3">
+    <value>1,78</value>
+    <condition>greater than 0,65</condition>
+    <error-message>NH3 greater than 0,65</error-message>
+    <date>19/12/2016 20:35:46</date>
+  </trigger>
+  <trigger node="CI2">
+    <value>7,8</value>
+    <condition>greater than 6,5</condition>
+    <error-message>CI2 greater than 6,5</error-message>
+    <date>19/12/2016 20:35:47</date>
+  </trigger>
+  <trigger node="CI2">
+    <value>7,8</value>
+    <condition>between 1 and 10</condition>
+    <error-message>CI2 between 1 and 10</error-message>
+    <date>19/12/2016 20:35:47</date>
+  </trigger>
+  <trigger node="PH">
+    <value>5,4</value>
+    <condition>less than 12</condition>
+    <error-message>PH less than 12</error-message>
+    <date>19/12/2016 20:35:48</date>
+  </trigger>
+  <trigger node="NH3">
+    <value>1,52</value>
+    <condition>greater than 0,65</condition>
+    <error-message>NH3 greater than 0,65</error-message>
+    <date>19/12/2016 20:35:49</date>
+  </trigger>
+  <trigger node="CI2">
+    <value>7,7</value>
+    <condition>greater than 6,5</condition>
+    <error-message>CI2 greater than 6,5</error-message>
+    <date>19/12/2016 20:35:50</date>
+  </trigger>
+  <trigger node="CI2">
+    <value>7,7</value>
+    <condition>between 1 and 10</condition>
+    <error-message>CI2 between 1 and 10</error-message>
+    <date>19/12/2016 20:35:50</date>
+  </trigger>
+  <trigger node="PH">
+    <value>6,7</value>
+    <condition>less than 12</condition>
+    <error-message>PH less than 12</error-message>
+    <date>19/12/2016 20:35:51</date>
+  </trigger>
+  <trigger node="NH3">
+    <value>1,3</value>
+    <condition>greater than 0,65</condition>
+    <error-message>NH3 greater than 0,65</error-message>
+    <date>19/12/2016 20:35:52</date>
+  </trigger>
+  <trigger node="CI2">
+    <value>10,7</value>
+    <condition>greater than 6,5</condition>
+    <error-message>CI2 greater than 6,5</error-message>
+    <date>19/12/2016 20:35:53</date>
+  </trigger>
+  <trigger node="PH">
     <value>5</value>
+<<<<<<< HEAD
     <condition>less than 6</condition>
     <error-message>PH less than 6</error-message>
     <date>16/12/2016 16:40:17</date>
@@ -23,4 +108,46 @@
     <error-message>PH less than 9</error-message>
     <date>19/12/2016 19:40:17</date>
   </alarm>
+=======
+    <condition>less than 12</condition>
+    <error-message>PH less than 12</error-message>
+    <date>19/12/2016 20:35:54</date>
+  </trigger>
+  <trigger node="NH3">
+    <value>1,15</value>
+    <condition>greater than 0,65</condition>
+    <error-message>NH3 greater than 0,65</error-message>
+    <date>19/12/2016 20:35:55</date>
+  </trigger>
+  <trigger node="CI2">
+    <value>8,7</value>
+    <condition>greater than 6,5</condition>
+    <error-message>CI2 greater than 6,5</error-message>
+    <date>19/12/2016 20:35:56</date>
+  </trigger>
+  <trigger node="CI2">
+    <value>8,7</value>
+    <condition>between 1 and 10</condition>
+    <error-message>CI2 between 1 and 10</error-message>
+    <date>19/12/2016 20:35:56</date>
+  </trigger>
+  <trigger node="PH">
+    <value>6,4</value>
+    <condition>less than 12</condition>
+    <error-message>PH less than 12</error-message>
+    <date>19/12/2016 20:35:57</date>
+  </trigger>
+  <trigger node="NH3">
+    <value>1,6</value>
+    <condition>greater than 0,65</condition>
+    <error-message>NH3 greater than 0,65</error-message>
+    <date>19/12/2016 20:35:58</date>
+  </trigger>
+  <trigger node="CI2">
+    <value>10,5</value>
+    <condition>greater than 6,5</condition>
+    <error-message>CI2 greater than 6,5</error-message>
+    <date>19/12/2016 20:35:59</date>
+  </trigger>
+>>>>>>> d47833f0300e2c9c22993e5b5b283ba9fd24fcc2
 </alarms>

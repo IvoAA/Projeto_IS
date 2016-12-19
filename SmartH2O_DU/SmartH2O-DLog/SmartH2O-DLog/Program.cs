@@ -50,9 +50,9 @@ MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, MqttMsgB
 
         private static void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
+            if(e.Topic == "alarms")
+                Console.WriteLine("Received = " + Encoding.UTF8.GetString(e.Message) + " on topic " + e.Topic);
 
-            Console.WriteLine("Received = " + Encoding.UTF8.GetString(e.Message) +
-            " on topic " + e.Topic);
             organizeXML(e);
         }
 
@@ -109,7 +109,7 @@ MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, MqttMsgB
                         XmlNode root = doc.DocumentElement;
                         XmlDocumentFragment aux = doc.CreateDocumentFragment();
                         aux.InnerXml = xml;
-                        XmlNodeList alarms = aux.SelectNodes("/alarm");
+                        XmlNodeList alarms = aux.SelectNodes("/alarm/trigger");
 
                         foreach(XmlNode alarm in alarms)
                         {
