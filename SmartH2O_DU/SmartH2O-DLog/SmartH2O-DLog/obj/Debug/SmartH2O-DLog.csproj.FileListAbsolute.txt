@@ -21,3 +21,10 @@ C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\bin\D
 C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\SmartH2O-DLog.pdb
 C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\M2Mqtt.Net.dll
 C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\obj\Debug\SmartH2O-DLog.csprojResolveAssemblyReference.cache
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\SmartH2O-DLog.exe.config
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\SmartH2O-DLog.exe
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\SmartH2O-DLog.pdb
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\M2Mqtt.Net.dll
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\obj\Debug\SmartH2O-DLog.csprojResolveAssemblyReference.cache
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\obj\Debug\SmartH2O-DLog.exe
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\SmartH2O-DLog\SmartH2O-DLog\obj\Debug\SmartH2O-DLog.pdb

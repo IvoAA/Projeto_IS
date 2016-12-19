@@ -156,8 +156,8 @@ namespace Alarm
 
                                 break;
                         }
-
-                        fireTriggers(fired, node);
+                        if(fired.Count > 0)
+                            fireTriggers(fired, node);
                     }
                 }
                 catch (Exception)
@@ -194,7 +194,10 @@ namespace Alarm
                 XmlElement date = doc.CreateElement("date");
                 date.InnerText = t.date.ToString();
                 alarm.AppendChild(date);
+
+                doc.AppendChild(alarm);
             }
+
 
             SendData(doc);
            
