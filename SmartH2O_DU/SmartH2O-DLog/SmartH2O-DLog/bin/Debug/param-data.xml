@@ -4,6 +4,96 @@
     <value>2</value>
     <date>21/02/2016 17:58:13</date>
   </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.2</value>
+    <date>27/11/2016 17:52:14</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>3.1</value>
+    <date>28/11/2016 17:52:14</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>3.4</value>
+    <date>29/11/2016 17:52:14</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>4.6</value>
+    <date>1/12/2016 17:52:14</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.1</value>
+    <date>2/12/2016 17:46:14</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.3</value>
+    <date>3/12/2016 17:51:14</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.7</value>
+    <date>4/12/2016 17:56:14</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.7</value>
+    <date>5/12/2016 17:56:14</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.7</value>
+    <date>6/12/2016 17:56:14</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.7</value>
+    <date>7/12/2016 17:56:14</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.7</value>
+    <date>8/12/2016 17:56:14</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.7</value>
+    <date>9/12/2016 17:56:14</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.7</value>
+    <date>10/12/2016 17:56:14</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.8</value>
+    <date>11/12/2016 17:56:15</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.9</value>
+    <date>12/12/2016 17:56:16</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>6.0</value>
+    <date>13/12/2016 17:56:17</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>6.1</value>
+    <date>14/12/2016 17:56:18</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>6.2</value>
+    <date>15/12/2016 17:56:19</date>
+  </sensor>
   <sensor element="CI2">
     <id>3</id>
     <value>11.1</value>

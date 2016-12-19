@@ -36,8 +36,8 @@ namespace SmartH2O_SeeAPP
                 this.dataGridViewLogs.Rows.Add();
                 dataGridViewLogs.Rows[i].Cells[0].Value = day.ToString("dd/MM/yyyy");
                 dataGridViewLogs.Rows[i].Cells[1].Value = sums[0];
-                dataGridViewLogs.Rows[i].Cells[2].Value = sums[1];
-                dataGridViewLogs.Rows[i].Cells[3].Value = sums[2];
+                dataGridViewLogs.Rows[i].Cells[2].Value = sums[2];
+                dataGridViewLogs.Rows[i].Cells[3].Value = sums[1];
                 i++;
             }
         }
@@ -95,8 +95,8 @@ namespace SmartH2O_SeeAPP
                 string[] sums = hour.Split(';');
                 dataGridViewLogs.Rows[i].Cells[0].Value = sums[0] + "h00";
                 dataGridViewLogs.Rows[i].Cells[1].Value = sums[1];
-                dataGridViewLogs.Rows[i].Cells[2].Value = sums[2];
-                dataGridViewLogs.Rows[i].Cells[3].Value = sums[3];
+                dataGridViewLogs.Rows[i].Cells[2].Value = sums[3];
+                dataGridViewLogs.Rows[i].Cells[3].Value = sums[2];
                 i++;
             }
         }
@@ -117,8 +117,8 @@ namespace SmartH2O_SeeAPP
                 dataGridViewLogs.Rows.Add();
                 dataGridViewLogs.Rows[i].Cells[0].Value = "Week " + week.ToString();
                 dataGridViewLogs.Rows[i].Cells[1].Value = sums[0];
-                dataGridViewLogs.Rows[i].Cells[2].Value = sums[1];
-                dataGridViewLogs.Rows[i].Cells[3].Value = sums[2];
+                dataGridViewLogs.Rows[i].Cells[2].Value = sums[2];
+                dataGridViewLogs.Rows[i].Cells[3].Value = sums[1];
                 i++;
             }
             
