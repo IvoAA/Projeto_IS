@@ -58,6 +58,9 @@
     </Compile>
     <Compile Include="Alarm_Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form.aa.resx">
+      <DependentUpon>Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form.resx">
       <DependentUpon>Form.cs</DependentUpon>
     </EmbeddedResource>

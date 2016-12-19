@@ -31,3 +31,6 @@ D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\Alarm\obj\Debug\Alarm.Properties.Resou
 D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\Alarm\obj\Debug\Alarm.csproj.GenerateResource.Cache
 D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\Alarm\obj\Debug\Alarm.exe
 D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\Alarm\obj\Debug\Alarm.pdb
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Alarm\bin\Debug\aa\Alarm.resources.dll
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Alarm\obj\Debug\Alarm.Form.aa.resources
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Alarm\obj\Debug\aa\Alarm.resources.dll
