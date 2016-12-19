@@ -94,6 +94,7 @@ MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, MqttMsgB
                         doc.Save("param-data.xml");
 
                 } else { 
+                
 
                         if (!File.Exists("alarms-data.xml"))
                         {
@@ -103,10 +104,10 @@ MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, MqttMsgB
                         }
                     
 
-                        /*doc.Load("alarms-data.xml");
+                        doc.Load("alarms-data.xml");
 
                         XmlNode root = doc.DocumentElement;
-                        XmlDocument aux = new XmlDocument();
+                        XmlDocumentFragment aux = doc.CreateDocumentFragment();
                         aux.InnerXml = xml;
                         XmlNodeList alarms = aux.SelectNodes("/alarm");
 
@@ -116,7 +117,7 @@ MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, MqttMsgB
                         }
 
                         doc.Save("alarms-data.xml");
-                        */
+                        
                    
                 }
             }
