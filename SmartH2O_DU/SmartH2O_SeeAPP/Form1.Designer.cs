@@ -28,51 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             this.buttonLogsBetweenDates = new System.Windows.Forms.Button();
             this.dateTimePickerLogsStartingDate = new System.Windows.Forms.DateTimePicker();
             this.labelStartingDate = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerAlarmsEndingDate = new System.Windows.Forms.DateTimePicker();
             this.labelEndingDate = new System.Windows.Forms.Label();
             this.dataGridViewAlarms = new System.Windows.Forms.DataGridView();
             this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Element = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewLogs = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabAlarms = new System.Windows.Forms.TabPage();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerAlarmsStartingDate = new System.Windows.Forms.DateTimePicker();
             this.labelElements = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.checkBoxAll = new System.Windows.Forms.CheckBox();
             this.tabLogs = new System.Windows.Forms.TabPage();
-            this.groupBoxLogsWeekly = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.groupBoxLogsDaily = new System.Windows.Forms.GroupBox();
+            this.labelLogsElement = new System.Windows.Forms.Label();
+            this.comboBoxLogsElement = new System.Windows.Forms.ComboBox();
+            this.groupBoxLogsHourly = new System.Windows.Forms.GroupBox();
+            this.labelLogsDaily = new System.Windows.Forms.Label();
             this.buttonLogsDaily = new System.Windows.Forms.Button();
             this.dateTimePickerLogsDaily = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxLogs = new System.Windows.Forms.ComboBox();
+            this.comboBoxLogsTime = new System.Windows.Forms.ComboBox();
             this.groupBoxLogsBetweenDates = new System.Windows.Forms.GroupBox();
             this.labelLogsStartingDate = new System.Windows.Forms.Label();
             this.labelLogsEndingDate = new System.Windows.Forms.Label();
             this.dateTimePickerLogsEndingDate = new System.Windows.Forms.DateTimePicker();
             this.Statistics = new System.Windows.Forms.TabPage();
-            this.labelLogsWeekly = new System.Windows.Forms.Label();
-            this.labelLogsDaily = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlarms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLogs)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabAlarms.SuspendLayout();
             this.tabLogs.SuspendLayout();
-            this.groupBoxLogsWeekly.SuspendLayout();
-            this.groupBoxLogsDaily.SuspendLayout();
+            this.groupBoxLogsHourly.SuspendLayout();
             this.groupBoxLogsBetweenDates.SuspendLayout();
-
             this.SuspendLayout();
             // 
             // buttonLogsBetweenDates
@@ -96,24 +91,24 @@
             // labelStartingDate
             // 
             this.labelStartingDate.AutoSize = true;
-            this.labelStartingDate.Location = new System.Drawing.Point(79, 59);
+            this.labelStartingDate.Location = new System.Drawing.Point(79, 63);
             this.labelStartingDate.Name = "labelStartingDate";
             this.labelStartingDate.Size = new System.Drawing.Size(72, 13);
             this.labelStartingDate.TabIndex = 3;
             this.labelStartingDate.Text = "Starting Date:";
             // 
-            // dateTimePicker2
+            // dateTimePickerAlarmsEndingDate
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(460, 59);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 4;
-            this.dateTimePicker2.Value = new System.DateTime(2016, 12, 18, 0, 0, 0, 0);
+            this.dateTimePickerAlarmsEndingDate.Location = new System.Drawing.Point(465, 61);
+            this.dateTimePickerAlarmsEndingDate.Name = "dateTimePickerAlarmsEndingDate";
+            this.dateTimePickerAlarmsEndingDate.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerAlarmsEndingDate.TabIndex = 3;
+            this.dateTimePickerAlarmsEndingDate.Value = new System.DateTime(2016, 12, 18, 0, 0, 0, 0);
             // 
             // labelEndingDate
             // 
             this.labelEndingDate.AutoSize = true;
-            this.labelEndingDate.Location = new System.Drawing.Point(385, 59);
+            this.labelEndingDate.Location = new System.Drawing.Point(390, 63);
             this.labelEndingDate.Name = "labelEndingDate";
             this.labelEndingDate.Size = new System.Drawing.Size(69, 13);
             this.labelEndingDate.TabIndex = 5;
@@ -158,7 +153,6 @@
             // 
             this.dataGridViewLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLogs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
@@ -167,13 +161,6 @@
             this.dataGridViewLogs.Name = "dataGridViewLogs";
             this.dataGridViewLogs.Size = new System.Drawing.Size(791, 360);
             this.dataGridViewLogs.TabIndex = 8;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Element";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -216,13 +203,13 @@
             // 
             // tabAlarms
             // 
-            this.tabAlarms.Controls.Add(this.dateTimePicker3);
+            this.tabAlarms.Controls.Add(this.dateTimePickerAlarmsStartingDate);
             this.tabAlarms.Controls.Add(this.labelElements);
             this.tabAlarms.Controls.Add(this.checkedListBox1);
             this.tabAlarms.Controls.Add(this.checkBoxAll);
             this.tabAlarms.Controls.Add(this.dataGridViewAlarms);
             this.tabAlarms.Controls.Add(this.labelEndingDate);
-            this.tabAlarms.Controls.Add(this.dateTimePicker2);
+            this.tabAlarms.Controls.Add(this.dateTimePickerAlarmsEndingDate);
             this.tabAlarms.Controls.Add(this.labelStartingDate);
             this.tabAlarms.Location = new System.Drawing.Point(4, 22);
             this.tabAlarms.Name = "tabAlarms";
@@ -232,12 +219,12 @@
             this.tabAlarms.Text = "Alarms";
             this.tabAlarms.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker3
+            // dateTimePickerAlarmsStartingDate
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(157, 59);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker3.TabIndex = 11;
+            this.dateTimePickerAlarmsStartingDate.Location = new System.Drawing.Point(157, 59);
+            this.dateTimePickerAlarmsStartingDate.Name = "dateTimePickerAlarmsStartingDate";
+            this.dateTimePickerAlarmsStartingDate.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerAlarmsStartingDate.TabIndex = 11;
             // 
             // labelElements
             // 
@@ -277,9 +264,10 @@
             // 
             // tabLogs
             // 
-            this.tabLogs.Controls.Add(this.groupBoxLogsWeekly);
-            this.tabLogs.Controls.Add(this.groupBoxLogsDaily);
-            this.tabLogs.Controls.Add(this.comboBoxLogs);
+            this.tabLogs.Controls.Add(this.labelLogsElement);
+            this.tabLogs.Controls.Add(this.comboBoxLogsElement);
+            this.tabLogs.Controls.Add(this.groupBoxLogsHourly);
+            this.tabLogs.Controls.Add(this.comboBoxLogsTime);
             this.tabLogs.Controls.Add(this.dataGridViewLogs);
             this.tabLogs.Controls.Add(this.groupBoxLogsBetweenDates);
             this.tabLogs.Location = new System.Drawing.Point(4, 22);
@@ -290,39 +278,48 @@
             this.tabLogs.Text = "Logs";
             this.tabLogs.UseVisualStyleBackColor = true;
             // 
-            // groupBoxLogsWeekly
+            // labelLogsElement
             // 
-            this.groupBoxLogsWeekly.Controls.Add(this.labelLogsWeekly);
-            this.groupBoxLogsWeekly.Controls.Add(this.comboBox1);
-            this.groupBoxLogsWeekly.Location = new System.Drawing.Point(247, 5);
-            this.groupBoxLogsWeekly.Name = "groupBoxLogsWeekly";
-            this.groupBoxLogsWeekly.Size = new System.Drawing.Size(791, 50);
-            this.groupBoxLogsWeekly.TabIndex = 14;
-            this.groupBoxLogsWeekly.TabStop = false;
+            this.labelLogsElement.AutoSize = true;
+            this.labelLogsElement.Location = new System.Drawing.Point(198, 23);
+            this.labelLogsElement.Name = "labelLogsElement";
+            this.labelLogsElement.Size = new System.Drawing.Size(48, 13);
+            this.labelLogsElement.TabIndex = 16;
+            this.labelLogsElement.Text = "Element:";
             // 
-            // comboBox1
+            // comboBoxLogsElement
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Semana 1",
-            "Semana 2",
-            "Semana 3"});
-            this.comboBox1.Location = new System.Drawing.Point(141, 15);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
+            this.comboBoxLogsElement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxLogsElement.FormattingEnabled = true;
+            this.comboBoxLogsElement.Items.AddRange(new object[] {
+            "PH",
+            "NH3",
+            "CI2"});
+            this.comboBoxLogsElement.Location = new System.Drawing.Point(252, 20);
+            this.comboBoxLogsElement.Name = "comboBoxLogsElement";
+            this.comboBoxLogsElement.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxLogsElement.TabIndex = 15;
+            this.comboBoxLogsElement.SelectedIndexChanged += new System.EventHandler(this.comboBoxLogsElement_SelectedIndexChanged);
             // 
-            // groupBoxLogsDaily
+            // groupBoxLogsHourly
             // 
-            this.groupBoxLogsDaily.Controls.Add(this.labelLogsDaily);
-            this.groupBoxLogsDaily.Controls.Add(this.buttonLogsDaily);
-            this.groupBoxLogsDaily.Controls.Add(this.dateTimePickerLogsDaily);
-            this.groupBoxLogsDaily.Location = new System.Drawing.Point(40, 468);
-            this.groupBoxLogsDaily.Name = "groupBoxLogsDaily";
-            this.groupBoxLogsDaily.Size = new System.Drawing.Size(791, 50);
-            this.groupBoxLogsDaily.TabIndex = 13;
-            this.groupBoxLogsDaily.TabStop = false;
+            this.groupBoxLogsHourly.Controls.Add(this.labelLogsDaily);
+            this.groupBoxLogsHourly.Controls.Add(this.buttonLogsDaily);
+            this.groupBoxLogsHourly.Controls.Add(this.dateTimePickerLogsDaily);
+            this.groupBoxLogsHourly.Location = new System.Drawing.Point(40, 468);
+            this.groupBoxLogsHourly.Name = "groupBoxLogsHourly";
+            this.groupBoxLogsHourly.Size = new System.Drawing.Size(791, 50);
+            this.groupBoxLogsHourly.TabIndex = 13;
+            this.groupBoxLogsHourly.TabStop = false;
+            // 
+            // labelLogsDaily
+            // 
+            this.labelLogsDaily.AutoSize = true;
+            this.labelLogsDaily.Location = new System.Drawing.Point(78, 19);
+            this.labelLogsDaily.Name = "labelLogsDaily";
+            this.labelLogsDaily.Size = new System.Drawing.Size(33, 13);
+            this.labelLogsDaily.TabIndex = 15;
+            this.labelLogsDaily.Text = "Date:";
             // 
             // buttonLogsDaily
             // 
@@ -332,7 +329,7 @@
             this.buttonLogsDaily.TabIndex = 14;
             this.buttonLogsDaily.Text = "Print";
             this.buttonLogsDaily.UseVisualStyleBackColor = true;
-            this.buttonLogsDaily.Click += new System.EventHandler(this.buttonLogsDaily_Click);
+            this.buttonLogsDaily.Click += new System.EventHandler(this.buttonLogsHourly_Click);
             // 
             // dateTimePickerLogsDaily
             // 
@@ -341,18 +338,18 @@
             this.dateTimePickerLogsDaily.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerLogsDaily.TabIndex = 14;
             // 
-            // comboBoxLogs
+            // comboBoxLogsTime
             // 
-            this.comboBoxLogs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxLogs.Items.AddRange(new object[] {
-            "Daily",
+            this.comboBoxLogsTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxLogsTime.Items.AddRange(new object[] {
+            "Hourly",
             "Between Dates",
             "Weekly"});
-            this.comboBoxLogs.Location = new System.Drawing.Point(56, 20);
-            this.comboBoxLogs.Name = "comboBoxLogs";
-            this.comboBoxLogs.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxLogs.TabIndex = 0;
-            this.comboBoxLogs.SelectedIndexChanged += new System.EventHandler(this.comboBoxLogs_SelectedIndexChanged);
+            this.comboBoxLogsTime.Location = new System.Drawing.Point(56, 20);
+            this.comboBoxLogsTime.Name = "comboBoxLogsTime";
+            this.comboBoxLogsTime.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxLogsTime.TabIndex = 0;
+            this.comboBoxLogsTime.SelectedIndexChanged += new System.EventHandler(this.comboBoxLogs_SelectedIndexChanged);
             // 
             // groupBoxLogsBetweenDates
             // 
@@ -401,44 +398,17 @@
             // 
             this.Statistics.Location = new System.Drawing.Point(4, 22);
             this.Statistics.Name = "Statistics";
-            this.Statistics.Size = new System.Drawing.Size(907, 518);
+            this.Statistics.Size = new System.Drawing.Size(953, 518);
             this.Statistics.TabIndex = 2;
             this.Statistics.Text = "Statistics";
             this.Statistics.UseVisualStyleBackColor = true;
-            // 
-            // labelLogsWeekly
-            // 
-            this.labelLogsWeekly.AutoSize = true;
-            this.labelLogsWeekly.Location = new System.Drawing.Point(82, 18);
-            this.labelLogsWeekly.Name = "labelLogsWeekly";
-            this.labelLogsWeekly.Size = new System.Drawing.Size(39, 13);
-            this.labelLogsWeekly.TabIndex = 1;
-            this.labelLogsWeekly.Text = "Week:";
-            // 
-            // labelLogsDaily
-            // 
-            this.labelLogsDaily.AutoSize = true;
-            this.labelLogsDaily.Location = new System.Drawing.Point(78, 19);
-            this.labelLogsDaily.Name = "labelLogsDaily";
-            this.labelLogsDaily.Size = new System.Drawing.Size(33, 13);
-            this.labelLogsDaily.TabIndex = 15;
-            this.labelLogsDaily.Text = "Date:";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(370, 27);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 3;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.ClientSize = new System.Drawing.Size(987, 575);
             this.Controls.Add(this.tabControl1);
-
             this.Name = "Form1";
             this.Text = "SmartH2O Statistics-Visualizer";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -448,10 +418,9 @@
             this.tabAlarms.ResumeLayout(false);
             this.tabAlarms.PerformLayout();
             this.tabLogs.ResumeLayout(false);
-            this.groupBoxLogsWeekly.ResumeLayout(false);
-            this.groupBoxLogsWeekly.PerformLayout();
-            this.groupBoxLogsDaily.ResumeLayout(false);
-            this.groupBoxLogsDaily.PerformLayout();
+            this.tabLogs.PerformLayout();
+            this.groupBoxLogsHourly.ResumeLayout(false);
+            this.groupBoxLogsHourly.PerformLayout();
             this.groupBoxLogsBetweenDates.ResumeLayout(false);
             this.groupBoxLogsBetweenDates.PerformLayout();
             this.ResumeLayout(false);
@@ -463,7 +432,7 @@
         private System.Windows.Forms.Button buttonLogsBetweenDates;
         private System.Windows.Forms.DateTimePicker dateTimePickerLogsStartingDate;
         private System.Windows.Forms.Label labelStartingDate;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePickerAlarmsEndingDate;
         private System.Windows.Forms.Label labelEndingDate;
         private System.Windows.Forms.DataGridView dataGridViewAlarms;
         private System.Windows.Forms.DataGridView dataGridViewLogs;
@@ -476,26 +445,23 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.CheckBox checkBoxAll;
         private System.Windows.Forms.Label labelElements;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dateTimePickerAlarmsStartingDate;
         private System.Windows.Forms.Label labelLogsEndingDate;
         private System.Windows.Forms.DateTimePicker dateTimePickerLogsEndingDate;
         private System.Windows.Forms.Label labelLogsStartingDate;
         private System.Windows.Forms.GroupBox groupBoxLogsBetweenDates;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.ComboBox comboBoxLogs;
-        private System.Windows.Forms.GroupBox groupBoxLogsDaily;
+        private System.Windows.Forms.ComboBox comboBoxLogsTime;
+        private System.Windows.Forms.GroupBox groupBoxLogsHourly;
         private System.Windows.Forms.Button buttonLogsDaily;
         private System.Windows.Forms.DateTimePicker dateTimePickerLogsDaily;
-        private System.Windows.Forms.GroupBox groupBoxLogsWeekly;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label labelLogsWeekly;
         private System.Windows.Forms.Label labelLogsDaily;
-
+        private System.Windows.Forms.ComboBox comboBoxLogsElement;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.Label labelLogsElement;
     }
 }
 

@@ -1,4 +1,9 @@
 <sensors>
+  <sensor element="PH">
+    <id>1</id>
+    <value>2</value>
+    <date>21/02/2016 17:58:13</date>
+  </sensor>
   <sensor element="CI2">
     <id>3</id>
     <value>11.1</value>
