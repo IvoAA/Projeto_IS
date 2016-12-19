@@ -157,59 +157,41 @@ namespace SmartH2O_Service
             return dict;
         }
 
-        public Dictionary<DateTime, List<double>> GetRaisedAlarms(List<string> elements)
+        public List<string> GetRaisedAlarms(List<string> elements)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(FILEPATH2);
-            string xpath_string = "/alarms/alarm[";
+            string xpath_string = "";
 
-            foreach (string element in elements)
+            if (elements.Count < 1)
             {
-                xpath_string += "@node=\'" + element + "\' or ";
+                xpath_string = "/alarms/trigger";
             }
+            else
+            {
+                xpath_string = "/alarms/trigger[";
 
-            xpath_string = xpath_string.Remove(xpath_string.Length - 4);
+                foreach (string element in elements)
+                {
+                    xpath_string += "@node=\'" + element + "\' or ";
+                }
 
-            xpath_string += "]";
+                xpath_string = xpath_string.Remove(xpath_string.Length - 4);
+
+                xpath_string += "]";
+
+            }
 
             XmlNodeList nodes = (doc.SelectNodes(xpath_string));
-            
-            Dictionary<DateTime, List<double>> filteredNodes = new Dictionary<DateTime, List<double>>();
 
-            /*
+            List<string> result = new List<string>();
+            
             foreach (XmlNode node in nodes)
             {
-                //string aux = node.ChildNodes[3].InnerText.Split(' ')[0];
-                DateTime date = (Convert.ToDateTime(node.ChildNodes[3].InnerText.Split(' ')[0]));
-                
-                if (filteredNodes.ContainsKey(date))
-                {
-                    List<double> vals = filteredNodes[date];
-                    
-                    filteredNodes[date] = vals;
-                }
-                else
-                {
-                    List<double> newList = new List<double>();
-                    newList.Add(value);
-                    filteredNodes.Add(date, newList);
-                }
-                filteredNodes[date].Add(value);
-                
+                result.Add(node.ChildNodes[3].InnerText.Split(' ')[0] + ";" + node.ChildNodes[0].InnerText + ";" + node.ChildNodes[2].InnerText + ";" + node.Attributes["node"].InnerText);
             }
-
-            foreach (var day in filteredNodes.Keys.ToList())
-            {
-                List<double> vals = filteredNodes[day];
-                vals.Clear();
-                vals.Add();
-                vals.Add(max);
-                vals.Add(avg);
-
-                filteredNodes[day] = vals;
-            }*/
-
-            return filteredNodes;
+              
+            return result;
         }
     }
 }

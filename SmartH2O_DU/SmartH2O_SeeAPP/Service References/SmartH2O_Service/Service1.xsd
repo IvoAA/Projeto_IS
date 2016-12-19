@@ -56,7 +56,7 @@
   <xs:element name="GetRaisedAlarmsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetRaisedAlarmsResult" nillable="true" type="q5:ArrayOfKeyValueOfdateTimeArrayOfdoublety7Ep6D1" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetRaisedAlarmsResult" nillable="true" type="q5:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

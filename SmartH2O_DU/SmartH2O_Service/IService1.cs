@@ -24,7 +24,7 @@ namespace SmartH2O_Service
         // TODO: Add your service operations here
 
         [OperationContract]
-        Dictionary<DateTime, List<double>> GetRaisedAlarms(List<string> elements);
+        List<string> GetRaisedAlarms(List<string> elements);
     }
 
 

@@ -31,11 +31,12 @@
             this.buttonLogsBetweenDates = new System.Windows.Forms.Button();
             this.dateTimePickerLogsStartingDate = new System.Windows.Forms.DateTimePicker();
             this.labelStartingDate = new System.Windows.Forms.Label();
-            this.dateTimePickerAlarmsEndingDate = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerAlarmsStartingDate = new System.Windows.Forms.DateTimePicker();
             this.labelEndingDate = new System.Windows.Forms.Label();
             this.dataGridViewAlarms = new System.Windows.Forms.DataGridView();
             this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Element = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewLogs = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,9 +45,10 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabAlarms = new System.Windows.Forms.TabPage();
-            this.dateTimePickerAlarmsStartingDate = new System.Windows.Forms.DateTimePicker();
+            this.buttonAlarmsPrint = new System.Windows.Forms.Button();
+            this.dateTimePickerAlarmsEndingDate = new System.Windows.Forms.DateTimePicker();
             this.labelElements = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxAlarms = new System.Windows.Forms.CheckedListBox();
             this.checkBoxAll = new System.Windows.Forms.CheckBox();
             this.tabLogs = new System.Windows.Forms.TabPage();
             this.labelLogsElement = new System.Windows.Forms.Label();
@@ -61,7 +63,6 @@
             this.labelLogsEndingDate = new System.Windows.Forms.Label();
             this.dateTimePickerLogsEndingDate = new System.Windows.Forms.DateTimePicker();
             this.Statistics = new System.Windows.Forms.TabPage();
-            this.buttonAlarmsPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlarms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLogs)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -84,10 +85,11 @@
             // dateTimePickerLogsStartingDate
             // 
             this.dateTimePickerLogsStartingDate.Location = new System.Drawing.Point(101, 15);
+            this.dateTimePickerLogsStartingDate.MaxDate = new System.DateTime(2016, 12, 19, 0, 0, 0, 0);
             this.dateTimePickerLogsStartingDate.Name = "dateTimePickerLogsStartingDate";
             this.dateTimePickerLogsStartingDate.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerLogsStartingDate.TabIndex = 2;
-            this.dateTimePickerLogsStartingDate.Value = new System.DateTime(2016, 12, 15, 20, 29, 0, 0);
+            this.dateTimePickerLogsStartingDate.Value = new System.DateTime(2016, 12, 19, 0, 0, 0, 0);
             // 
             // labelStartingDate
             // 
@@ -98,13 +100,14 @@
             this.labelStartingDate.TabIndex = 3;
             this.labelStartingDate.Text = "Starting Date:";
             // 
-            // dateTimePickerAlarmsEndingDate
+            // dateTimePickerAlarmsStartingDate
             // 
-            this.dateTimePickerAlarmsEndingDate.Location = new System.Drawing.Point(465, 61);
-            this.dateTimePickerAlarmsEndingDate.Name = "dateTimePickerAlarmsEndingDate";
-            this.dateTimePickerAlarmsEndingDate.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerAlarmsEndingDate.TabIndex = 3;
-            this.dateTimePickerAlarmsEndingDate.Value = new System.DateTime(2016, 12, 18, 0, 0, 0, 0);
+            this.dateTimePickerAlarmsStartingDate.Location = new System.Drawing.Point(157, 59);
+            this.dateTimePickerAlarmsStartingDate.MaxDate = new System.DateTime(2016, 12, 19, 0, 0, 0, 0);
+            this.dateTimePickerAlarmsStartingDate.Name = "dateTimePickerAlarmsStartingDate";
+            this.dateTimePickerAlarmsStartingDate.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerAlarmsStartingDate.TabIndex = 3;
+            this.dateTimePickerAlarmsStartingDate.Value = new System.DateTime(2016, 12, 19, 0, 0, 0, 0);
             // 
             // labelEndingDate
             // 
@@ -121,6 +124,7 @@
             this.dataGridViewAlarms.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Time,
             this.Element,
+            this.Value,
             this.Description});
             this.dataGridViewAlarms.Location = new System.Drawing.Point(56, 97);
             this.dataGridViewAlarms.Name = "dataGridViewAlarms";
@@ -142,6 +146,14 @@
             this.Element.Name = "Element";
             this.Element.ReadOnly = true;
             this.Element.Width = 70;
+            // 
+            // Value
+            // 
+            this.Value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Value.HeaderText = "Value";
+            this.Value.Name = "Value";
+            this.Value.ReadOnly = true;
+            this.Value.Width = 59;
             // 
             // Description
             // 
@@ -205,13 +217,13 @@
             // tabAlarms
             // 
             this.tabAlarms.Controls.Add(this.buttonAlarmsPrint);
-            this.tabAlarms.Controls.Add(this.dateTimePickerAlarmsStartingDate);
+            this.tabAlarms.Controls.Add(this.dateTimePickerAlarmsEndingDate);
             this.tabAlarms.Controls.Add(this.labelElements);
-            this.tabAlarms.Controls.Add(this.checkedListBox1);
+            this.tabAlarms.Controls.Add(this.checkedListBoxAlarms);
             this.tabAlarms.Controls.Add(this.checkBoxAll);
             this.tabAlarms.Controls.Add(this.dataGridViewAlarms);
             this.tabAlarms.Controls.Add(this.labelEndingDate);
-            this.tabAlarms.Controls.Add(this.dateTimePickerAlarmsEndingDate);
+            this.tabAlarms.Controls.Add(this.dateTimePickerAlarmsStartingDate);
             this.tabAlarms.Controls.Add(this.labelStartingDate);
             this.tabAlarms.Location = new System.Drawing.Point(4, 22);
             this.tabAlarms.Name = "tabAlarms";
@@ -221,12 +233,22 @@
             this.tabAlarms.Text = "Alarms";
             this.tabAlarms.UseVisualStyleBackColor = true;
             // 
-            // dateTimePickerAlarmsStartingDate
+            // buttonAlarmsPrint
             // 
-            this.dateTimePickerAlarmsStartingDate.Location = new System.Drawing.Point(157, 59);
-            this.dateTimePickerAlarmsStartingDate.Name = "dateTimePickerAlarmsStartingDate";
-            this.dateTimePickerAlarmsStartingDate.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerAlarmsStartingDate.TabIndex = 11;
+            this.buttonAlarmsPrint.Location = new System.Drawing.Point(727, 60);
+            this.buttonAlarmsPrint.Name = "buttonAlarmsPrint";
+            this.buttonAlarmsPrint.Size = new System.Drawing.Size(75, 23);
+            this.buttonAlarmsPrint.TabIndex = 12;
+            this.buttonAlarmsPrint.Text = "Print";
+            this.buttonAlarmsPrint.UseVisualStyleBackColor = true;
+            this.buttonAlarmsPrint.Click += new System.EventHandler(this.buttonAlarmsPrint_Click);
+            // 
+            // dateTimePickerAlarmsEndingDate
+            // 
+            this.dateTimePickerAlarmsEndingDate.Location = new System.Drawing.Point(465, 61);
+            this.dateTimePickerAlarmsEndingDate.Name = "dateTimePickerAlarmsEndingDate";
+            this.dateTimePickerAlarmsEndingDate.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerAlarmsEndingDate.TabIndex = 11;
             // 
             // labelElements
             // 
@@ -238,18 +260,18 @@
             this.labelElements.TabIndex = 10;
             this.labelElements.Text = "Elements";
             // 
-            // checkedListBox1
+            // checkedListBoxAlarms
             // 
-            this.checkedListBox1.Enabled = false;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.checkedListBoxAlarms.Enabled = false;
+            this.checkedListBoxAlarms.FormattingEnabled = true;
+            this.checkedListBoxAlarms.Items.AddRange(new object[] {
             "PH",
-            "Cl2",
+            "CI2",
             "NH3"});
-            this.checkedListBox1.Location = new System.Drawing.Point(871, 156);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(55, 79);
-            this.checkedListBox1.TabIndex = 9;
+            this.checkedListBoxAlarms.Location = new System.Drawing.Point(871, 156);
+            this.checkedListBoxAlarms.Name = "checkedListBoxAlarms";
+            this.checkedListBoxAlarms.Size = new System.Drawing.Size(55, 79);
+            this.checkedListBoxAlarms.TabIndex = 9;
             // 
             // checkBoxAll
             // 
@@ -394,7 +416,7 @@
             this.dateTimePickerLogsEndingDate.Name = "dateTimePickerLogsEndingDate";
             this.dateTimePickerLogsEndingDate.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerLogsEndingDate.TabIndex = 17;
-            this.dateTimePickerLogsEndingDate.Value = new System.DateTime(2016, 12, 18, 0, 0, 0, 0);
+            this.dateTimePickerLogsEndingDate.Value = new System.DateTime(2016, 12, 19, 0, 0, 0, 0);
             // 
             // Statistics
             // 
@@ -404,16 +426,6 @@
             this.Statistics.TabIndex = 2;
             this.Statistics.Text = "Statistics";
             this.Statistics.UseVisualStyleBackColor = true;
-            // 
-            // buttonAlarmsPrint
-            // 
-            this.buttonAlarmsPrint.Location = new System.Drawing.Point(727, 60);
-            this.buttonAlarmsPrint.Name = "buttonAlarmsPrint";
-            this.buttonAlarmsPrint.Size = new System.Drawing.Size(75, 23);
-            this.buttonAlarmsPrint.TabIndex = 12;
-            this.buttonAlarmsPrint.Text = "Print";
-            this.buttonAlarmsPrint.UseVisualStyleBackColor = true;
-            this.buttonAlarmsPrint.Click += new System.EventHandler(this.buttonAlarmsPrint_Click);
             // 
             // Form1
             // 
@@ -444,7 +456,7 @@
         private System.Windows.Forms.Button buttonLogsBetweenDates;
         private System.Windows.Forms.DateTimePicker dateTimePickerLogsStartingDate;
         private System.Windows.Forms.Label labelStartingDate;
-        private System.Windows.Forms.DateTimePicker dateTimePickerAlarmsEndingDate;
+        private System.Windows.Forms.DateTimePicker dateTimePickerAlarmsStartingDate;
         private System.Windows.Forms.Label labelEndingDate;
         private System.Windows.Forms.DataGridView dataGridViewAlarms;
         private System.Windows.Forms.DataGridView dataGridViewLogs;
@@ -452,17 +464,14 @@
         private System.Windows.Forms.TabPage tabAlarms;
         private System.Windows.Forms.TabPage tabLogs;
         private System.Windows.Forms.TabPage Statistics;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Time;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Element;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.CheckBox checkBoxAll;
         private System.Windows.Forms.Label labelElements;
-        private System.Windows.Forms.DateTimePicker dateTimePickerAlarmsStartingDate;
+        private System.Windows.Forms.DateTimePicker dateTimePickerAlarmsEndingDate;
         private System.Windows.Forms.Label labelLogsEndingDate;
         private System.Windows.Forms.DateTimePicker dateTimePickerLogsEndingDate;
         private System.Windows.Forms.Label labelLogsStartingDate;
         private System.Windows.Forms.GroupBox groupBoxLogsBetweenDates;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox checkedListBoxAlarms;
         private System.Windows.Forms.ComboBox comboBoxLogsTime;
         private System.Windows.Forms.GroupBox groupBoxLogsHourly;
         private System.Windows.Forms.Button buttonLogsDaily;
@@ -475,6 +484,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.Label labelLogsElement;
         private System.Windows.Forms.Button buttonAlarmsPrint;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Element;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Value;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
     }
 }
 

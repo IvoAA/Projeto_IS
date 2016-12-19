@@ -51,11 +51,11 @@ namespace SmartH2O_SeeAPP
         {
             if (checkBoxAll.Checked == false)
             {
-                checkedListBox1.Enabled = true;
+                checkedListBoxAlarms.Enabled = true;
             }
             else
             {
-                checkedListBox1.Enabled = false;
+                checkedListBoxAlarms.Enabled = false;
 
             }
         }
@@ -135,27 +135,31 @@ namespace SmartH2O_SeeAPP
 
         private void buttonAlarmsPrint_Click(object sender, EventArgs e)
         {
-            dataGridViewLogs.Rows.Clear();
+            dataGridViewAlarms.Rows.Clear();
             //string element = "PH";
-            string[] lista = { "PH", "CI2", "NH3" };
+            string[] lista = new string[] { };
+            if (checkBoxAll.Checked == false) { 
+                lista = checkedListBoxAlarms.CheckedItems.OfType<string>().ToArray();
+            }
             Service1Client serviceClient = new Service1Client();
             //escolham dia 15 de dezembro porque só temos registos nesse dia por enquanto
 
-            Dictionary<DateTime, double[]> dict = serviceClient.GetRaisedAlarms(lista);
-            //Dictionary<int, double[]> dict = serviceClient.GetSumInformationByWeek(element);
+            string[] sum = serviceClient.GetRaisedAlarms(lista);
 
-            /*int i = 0;
-            foreach (var week in dict.Keys)
+            int i = 0;
+            foreach (string alarm in sum)
             {
-                double[] sums = dict[week];
-                dataGridViewAlarms.Rows.Add();
-                dataGridViewAlarms.Rows[i].Cells[0].Value = "Week " + week.ToString();
-                dataGridViewAlarms.Rows[i].Cells[1].Value = sums[0];
-                dataGridViewAlarms.Rows[i].Cells[2].Value = sums[2];
-                dataGridViewAlarms.Rows[i].Cells[3].Value = sums[1];
+                this.dataGridViewAlarms.Rows.Add();
+                string[] sums = alarm.Split(';');
+                dataGridViewAlarms.Rows[i].Cells[0].Value = sums[0]; //data
+                dataGridViewAlarms.Rows[i].Cells[1].Value = sums[3]; //value
+                dataGridViewAlarms.Rows[i].Cells[2].Value = sums[1]; //description
+                dataGridViewAlarms.Rows[i].Cells[3].Value = sums[2]; //description
                 i++;
-            }*/
+            }
+            
         }
+
     }
 }
 

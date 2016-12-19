@@ -34,10 +34,10 @@ namespace SmartH2O_SeeAPP.SmartH2O_Service {
         System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, double[]>> GetSumInformationByWeekAsync(string elem);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetRaisedAlarms", ReplyAction="http://tempuri.org/IService1/GetRaisedAlarmsResponse")]
-        System.Collections.Generic.Dictionary<System.DateTime, double[]> GetRaisedAlarms(string[] elements);
+        string[] GetRaisedAlarms(string[] elements);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetRaisedAlarms", ReplyAction="http://tempuri.org/IService1/GetRaisedAlarmsResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<System.DateTime, double[]>> GetRaisedAlarmsAsync(string[] elements);
+        System.Threading.Tasks.Task<string[]> GetRaisedAlarmsAsync(string[] elements);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -91,11 +91,11 @@ namespace SmartH2O_SeeAPP.SmartH2O_Service {
             return base.Channel.GetSumInformationByWeekAsync(elem);
         }
         
-        public System.Collections.Generic.Dictionary<System.DateTime, double[]> GetRaisedAlarms(string[] elements) {
+        public string[] GetRaisedAlarms(string[] elements) {
             return base.Channel.GetRaisedAlarms(elements);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<System.DateTime, double[]>> GetRaisedAlarmsAsync(string[] elements) {
+        public System.Threading.Tasks.Task<string[]> GetRaisedAlarmsAsync(string[] elements) {
             return base.Channel.GetRaisedAlarmsAsync(elements);
         }
     }
