@@ -28,44 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
             this.OnOff = new System.Windows.Forms.Button();
+            this.treeViewTriggers = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
-            // 
-            // treeView1
-            // 
-            this.treeView1.Location = new System.Drawing.Point(12, 13);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(437, 214);
-            this.treeView1.TabIndex = 9;
             // 
             // OnOff
             // 
-            this.OnOff.Location = new System.Drawing.Point(179, 281);
+            resources.ApplyResources(this.OnOff, "OnOff");
             this.OnOff.Name = "OnOff";
-            this.OnOff.Size = new System.Drawing.Size(75, 23);
-            this.OnOff.TabIndex = 10;
-            this.OnOff.Text = "button1";
             this.OnOff.UseVisualStyleBackColor = true;
+            this.OnOff.Click += new System.EventHandler(this.OnOff_Click);
+            // 
+            // treeViewTriggers
+            // 
+            resources.ApplyResources(this.treeViewTriggers, "treeViewTriggers");
+            this.treeViewTriggers.Name = "treeViewTriggers";
             // 
             // Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 434);
+            this.Controls.Add(this.treeViewTriggers);
             this.Controls.Add(this.OnOff);
-            this.Controls.Add(this.treeView1);
             this.Name = "Form";
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Button OnOff;
+        private System.Windows.Forms.TreeView treeViewTriggers;
     }
 }
 

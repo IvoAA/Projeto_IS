@@ -35,14 +35,44 @@ namespace Alarm
 
         private void Form_Load(object sender, EventArgs e)
         {
-            OnOff.Text = "Turn Alarms OFF";
 
-            //Abrir xml e ver alarmes a detetar
+            // Abrir xml e ver alarmes a detetar
             ReadXmlTriggers();
 
-            //Comecar a receber dados dos sensores
+            // Mostrar Triggers no Form
+            FillTreeView();
+
+            // Comecar a receber dados dos sensores
             ReceiveData();
            
+        }
+
+        private void FillTreeView()
+        {
+            TreeNode parentnode = new TreeNode();
+
+            this.treeViewTriggers.BeginUpdate();
+            foreach (string node in triggers.Keys)
+            {
+
+                parentnode = new TreeNode(node);
+                foreach (Trigger t in triggers[node])
+                {
+                    if (!t.condition.Equals("between"))
+                    {
+                        parentnode.Nodes.Add(t.condition + " " + t.value);
+                    }
+                    else
+                    {
+                        parentnode.Nodes.Add(t.condition + " " + t.value + " and " + t.valueMax);
+                    }
+                        
+                }
+                treeViewTriggers.Nodes.Add(parentnode);
+            }
+            this.treeViewTriggers.EndUpdate();
+            
+
         }
 
         void ReadXmlTriggers()
@@ -82,7 +112,8 @@ namespace Alarm
                     }
                 }
                 on = true;
-               
+                OnOff.Text = "Turn Alarms OFF";
+
             }
             catch (Exception)
             {
@@ -214,7 +245,7 @@ namespace Alarm
                 Console.WriteLine("Error connecting to message broker...");
                 return;
             }
-            m_cClient.Publish("alarm", Encoding.UTF8.GetBytes(triggers.OuterXml));
+            m_cClient.Publish("alarms", Encoding.UTF8.GetBytes(triggers.OuterXml));
             Console.WriteLine("Sent");
         }
 
@@ -243,6 +274,18 @@ namespace Alarm
             //Subscribe to topics
             m_cClient.Subscribe(topics, qosLevels);
         }
-        
+
+        private void OnOff_Click(object sender, EventArgs e)
+        {
+            if (on)
+            {
+                on = false;
+                OnOff.Text = "Turn Alarms ON";
+            } else
+            {
+                on = true;
+                OnOff.Text = "Turn Alarms OFF";
+            }
+        }
     }
 }
