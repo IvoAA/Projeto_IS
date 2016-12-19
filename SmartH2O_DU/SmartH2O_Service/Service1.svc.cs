@@ -15,11 +15,9 @@ namespace SmartH2O_Service
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        
-
-       
+           
         string FILEPATH = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\param-data.xml");
-        
+        string FILEPATH2 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\SmartH2O-DLog\SmartH2O-DLog\bin\Debug\alarms-data.xml");
 
         //devolve string agora para testar
         public List<string> GetSumInformationAtDay(string day, string elem)
@@ -51,7 +49,6 @@ namespace SmartH2O_Service
                 {
                     double min = values[i].Min(), max = values[i].Max(), avg = values[i].Average();
                     result.Add(i + ";" + min + ";" + max + ";" + avg);
-
                 }
             }
 
@@ -158,6 +155,61 @@ namespace SmartH2O_Service
             }
 
             return dict;
+        }
+
+        public Dictionary<DateTime, List<double>> GetRaisedAlarms(List<string> elements)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(FILEPATH2);
+            string xpath_string = "/alarms/alarm[";
+
+            foreach (string element in elements)
+            {
+                xpath_string += "@node=\'" + element + "\' or ";
+            }
+
+            xpath_string = xpath_string.Remove(xpath_string.Length - 4);
+
+            xpath_string += "]";
+
+            XmlNodeList nodes = (doc.SelectNodes(xpath_string));
+            
+            Dictionary<DateTime, List<double>> filteredNodes = new Dictionary<DateTime, List<double>>();
+
+            /*
+            foreach (XmlNode node in nodes)
+            {
+                //string aux = node.ChildNodes[3].InnerText.Split(' ')[0];
+                DateTime date = (Convert.ToDateTime(node.ChildNodes[3].InnerText.Split(' ')[0]));
+                
+                if (filteredNodes.ContainsKey(date))
+                {
+                    List<double> vals = filteredNodes[date];
+                    
+                    filteredNodes[date] = vals;
+                }
+                else
+                {
+                    List<double> newList = new List<double>();
+                    newList.Add(value);
+                    filteredNodes.Add(date, newList);
+                }
+                filteredNodes[date].Add(value);
+                
+            }
+
+            foreach (var day in filteredNodes.Keys.ToList())
+            {
+                List<double> vals = filteredNodes[day];
+                vals.Clear();
+                vals.Add();
+                vals.Add(max);
+                vals.Add(avg);
+
+                filteredNodes[day] = vals;
+            }*/
+
+            return filteredNodes;
         }
     }
 }

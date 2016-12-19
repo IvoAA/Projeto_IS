@@ -25,6 +25,12 @@
   <wsdl:message name="IService1_GetSumInformationByWeek_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSumInformationByWeekResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetRaisedAlarms_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRaisedAlarms" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetRaisedAlarms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRaisedAlarmsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetSumInformationAtDay">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetSumInformationAtDay" message="tns:IService1_GetSumInformationAtDay_InputMessage" />
@@ -37,6 +43,10 @@
     <wsdl:operation name="GetSumInformationByWeek">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetSumInformationByWeek" message="tns:IService1_GetSumInformationByWeek_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetSumInformationByWeekResponse" message="tns:IService1_GetSumInformationByWeek_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRaisedAlarms">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetRaisedAlarms" message="tns:IService1_GetRaisedAlarms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetRaisedAlarmsResponse" message="tns:IService1_GetRaisedAlarms_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -61,6 +71,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetSumInformationByWeek">
       <soap:operation soapAction="http://tempuri.org/IService1/GetSumInformationByWeek" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRaisedAlarms">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetRaisedAlarms" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

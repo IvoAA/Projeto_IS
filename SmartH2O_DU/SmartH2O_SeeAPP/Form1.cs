@@ -134,7 +134,26 @@ namespace SmartH2O_SeeAPP
 
         private void buttonAlarmsPrint_Click(object sender, EventArgs e)
         {
+            dataGridViewLogs.Rows.Clear();
+            //string element = "PH";
+            string[] lista = { "PH", "CI2", "NH3" };
+            Service1Client serviceClient = new Service1Client();
+            //escolham dia 15 de dezembro porque só temos registos nesse dia por enquanto
 
+            Dictionary<DateTime, double[]> dict = serviceClient.GetRaisedAlarms(lista);
+            //Dictionary<int, double[]> dict = serviceClient.GetSumInformationByWeek(element);
+
+            /*int i = 0;
+            foreach (var week in dict.Keys)
+            {
+                double[] sums = dict[week];
+                dataGridViewAlarms.Rows.Add();
+                dataGridViewAlarms.Rows[i].Cells[0].Value = "Week " + week.ToString();
+                dataGridViewAlarms.Rows[i].Cells[1].Value = sums[0];
+                dataGridViewAlarms.Rows[i].Cells[2].Value = sums[2];
+                dataGridViewAlarms.Rows[i].Cells[3].Value = sums[1];
+                i++;
+            }*/
         }
     }
 }

@@ -3,12 +3,24 @@
     <value>5</value>
     <condition>less than 6</condition>
     <error-message>PH less than 6</error-message>
-    <date>19/12/2016 16:40:17</date>
+    <date>16/12/2016 16:40:17</date>
+  </alarm>
+  <alarm node="CI2">
+    <value>2</value>
+    <condition>less than 3</condition>
+    <error-message>CI2 less than 3</error-message>
+    <date>17/12/2016 17:40:17</date>
+  </alarm>
+  <alarm node="NH3">
+    <value>1</value>
+    <condition>less than 2</condition>
+    <error-message>NH3 less than 2</error-message>
+    <date>18/12/2016 18:40:17</date>
   </alarm>
   <alarm node="PH">
-    <value>5</value>
-    <condition>less than 6</condition>
-    <error-message>PH less than 6</error-message>
-    <date>19/12/2016 16:40:17</date>
+    <value>8</value>
+    <condition>less than 9</condition>
+    <error-message>PH less than 9</error-message>
+    <date>19/12/2016 19:40:17</date>
   </alarm>
 </alarms>

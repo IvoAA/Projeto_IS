@@ -22,6 +22,9 @@ namespace SmartH2O_Service
         [OperationContract]
         Dictionary<int, List<double>> GetSumInformationByWeek(string elem);
         // TODO: Add your service operations here
+
+        [OperationContract]
+        Dictionary<DateTime, List<double>> GetRaisedAlarms(List<string> elements);
     }
 
 
