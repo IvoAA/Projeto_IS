@@ -21,3 +21,6 @@ C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Data_Uploader\obj\Debug\Data_Uplo
 C:\Users\ASUS\Desktop\Projeto_IS\SmartH2O_DU\Data_Uploader\bin\Debug\Data_Uploader.exe.config
 C:\Users\ASUS\Desktop\Projeto_IS\SmartH2O_DU\Data_Uploader\obj\Debug\Data_Uploader.exe
 C:\Users\ASUS\Desktop\Projeto_IS\SmartH2O_DU\Data_Uploader\obj\Debug\Data_Uploader.pdb
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\Data_Uploader\bin\Debug\Data_Uploader.exe.config
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\Data_Uploader\obj\Debug\Data_Uploader.exe
+D:\Alex\Documentos\Projeto_IS\SmartH2O_DU\Data_Uploader\obj\Debug\Data_Uploader.pdb

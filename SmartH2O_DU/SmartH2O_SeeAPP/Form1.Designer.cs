@@ -61,6 +61,7 @@
             this.labelLogsEndingDate = new System.Windows.Forms.Label();
             this.dateTimePickerLogsEndingDate = new System.Windows.Forms.DateTimePicker();
             this.Statistics = new System.Windows.Forms.TabPage();
+            this.buttonAlarmsPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlarms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLogs)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -203,6 +204,7 @@
             // 
             // tabAlarms
             // 
+            this.tabAlarms.Controls.Add(this.buttonAlarmsPrint);
             this.tabAlarms.Controls.Add(this.dateTimePickerAlarmsStartingDate);
             this.tabAlarms.Controls.Add(this.labelElements);
             this.tabAlarms.Controls.Add(this.checkedListBox1);
@@ -403,6 +405,16 @@
             this.Statistics.Text = "Statistics";
             this.Statistics.UseVisualStyleBackColor = true;
             // 
+            // buttonAlarmsPrint
+            // 
+            this.buttonAlarmsPrint.Location = new System.Drawing.Point(727, 60);
+            this.buttonAlarmsPrint.Name = "buttonAlarmsPrint";
+            this.buttonAlarmsPrint.Size = new System.Drawing.Size(75, 23);
+            this.buttonAlarmsPrint.TabIndex = 12;
+            this.buttonAlarmsPrint.Text = "Print";
+            this.buttonAlarmsPrint.UseVisualStyleBackColor = true;
+            this.buttonAlarmsPrint.Click += new System.EventHandler(this.buttonAlarmsPrint_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -462,6 +474,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.Label labelLogsElement;
+        private System.Windows.Forms.Button buttonAlarmsPrint;
     }
 }
 

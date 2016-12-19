@@ -131,6 +131,11 @@ namespace SmartH2O_SeeAPP
                 printWeeklyData();
             }
         }
+
+        private void buttonAlarmsPrint_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
