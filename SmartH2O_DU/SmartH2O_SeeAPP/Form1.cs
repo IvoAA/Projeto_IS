@@ -84,6 +84,7 @@ namespace SmartH2O_SeeAPP
             dataGridViewLogs.Rows.Clear();
             string element = comboBoxLogsElement.SelectedItem.ToString();
             Service1Client serviceClient = new Service1Client();
+            
             //escolham dia 15 de dezembro porque só temos registos nesse dia por enquanto
             string date = dateTimePickerLogsDaily.Value.ToString("dd/MM/yyyy");
             string[] sum = serviceClient.GetSumInformationAtDay(date, element);

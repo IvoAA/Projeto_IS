@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib", "Lib\Lib.csproj", "{EF99C1D4-4D7B-45F8-99D7-258AA383F2F0}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartH2O_SeeAPP", "SmartH2O_SeeAPP\SmartH2O_SeeAPP.csproj", "{E67548A0-AAD1-49F5-BB2D-52EC899D3D76}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartH2O_Service", "SmartH2O_Service\SmartH2O_Service.csproj", "{B4182F07-E9A7-4F11-AFD3-69689113D484}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartH2O-DLog", "SmartH2O-DLog\SmartH2O-DLog\SmartH2O-DLog.csproj", "{122B3457-9F5D-400E-BE84-5B7B1BD0C909}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{B4182F07-E9A7-4F11-AFD3-69689113D484}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4182F07-E9A7-4F11-AFD3-69689113D484}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4182F07-E9A7-4F11-AFD3-69689113D484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{122B3457-9F5D-400E-BE84-5B7B1BD0C909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{122B3457-9F5D-400E-BE84-5B7B1BD0C909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{122B3457-9F5D-400E-BE84-5B7B1BD0C909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{122B3457-9F5D-400E-BE84-5B7B1BD0C909}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
