@@ -49,15 +49,7 @@ namespace SmartH2O_SeeAPP
 
         private void checkBoxAll_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxAll.Checked == false)
-            {
-                checkedListBoxAlarms.Enabled = true;
-            }
-            else
-            {
-                checkedListBoxAlarms.Enabled = false;
-
-            }
+            checkedListBoxAlarms.Enabled = !checkBoxAll.Checked;
         }
 
         private void comboBoxLogs_SelectedIndexChanged(object sender, EventArgs e)
