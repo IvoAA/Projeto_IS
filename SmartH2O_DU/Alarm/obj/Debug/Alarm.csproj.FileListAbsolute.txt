@@ -21,3 +21,6 @@ C:\Users\ASUS\Desktop\Projeto_IS\SmartH2O_DU\Alarm\bin\Debug\Alarm.exe.config
 C:\Users\ASUS\Desktop\Projeto_IS\SmartH2O_DU\Alarm\obj\Debug\Alarm.exe
 C:\Users\ASUS\Desktop\Projeto_IS\SmartH2O_DU\Alarm\obj\Debug\Alarm.pdb
 C:\Users\ASUS\Documents\Projeto_IS\SmartH2O_DU\Alarm\obj\Debug\Alarm.csprojResolveAssemblyReference.cache
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Alarm\bin\Debug\aa\Alarm.resources.dll
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Alarm\obj\Debug\Alarm.Form.aa.resources
+D:\Desktop\Ivo\Escola\3ano\5_IS\Projeto\SmartH2O_DU\Alarm\obj\Debug\aa\Alarm.resources.dll
