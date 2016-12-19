@@ -22,6 +22,7 @@ namespace Alarm
             public double value { get; set; }
             public double valueMax { get; set; }
             public string errorMessage { get; set; }
+            public DateTime date { get; set; }
         }
 
         Dictionary<string, List<Trigger>> triggers;
@@ -102,8 +103,116 @@ namespace Alarm
         {
             if (on)
             {
+                XmlDocument doc = new XmlDocument();
+                try
+                {
+                    doc.LoadXml(data);
+                    List<Trigger> fired = new List<Trigger>();
+                    List<Trigger> nodeTriggers = new List<Trigger>();
+                    XmlNode sensor = doc.SelectSingleNode("/sensor");
+                    string node = sensor.Attributes["element"].Value;
+                    double val = double.Parse(sensor["value"].InnerText.Replace('.', ','));
+                    nodeTriggers = triggers[node];
+                    foreach (var trigger in nodeTriggers)
+                    {
+                        int a = 1;
+                        trigger.date = DateTime.Parse( sensor["date"].InnerText);
+                        switch (trigger.condition)
+                        {
+                            case "equals":
+                                if (val == trigger.value)
+                                {
+                                    trigger.condition += " " + trigger.value;
+                                    trigger.value = val;
+                                    fired.Add(trigger);
+                                }
 
+                                break;
+                            case "less than":
+                                if (val < trigger.value)
+                                {
+                                    trigger.condition += " " + trigger.value;
+                                    trigger.value = val;
+                                    fired.Add(trigger);
+                                }
+
+                                break;
+                            case "greater than":
+                                if (val > trigger.value)
+                                {
+                                    trigger.condition += " " + trigger.value;
+                                    trigger.value = val;
+                                    fired.Add(trigger);
+                                }
+
+                                break;
+                            case "between":
+                                if (val > trigger.value && val < trigger.valueMax)
+                                {
+                                    trigger.condition += " " + trigger.value + " and " + trigger.valueMax;
+                                    trigger.value = val;
+                                    fired.Add(trigger);
+                                }
+
+                                break;
+                        }
+
+                        fireTriggers(fired, node);
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw new Exception("Error in checkTriggers()");
+                }
             }
+        }
+
+        private void fireTriggers(List<Trigger> fired, string node)
+        {
+
+            XmlDocument doc = new XmlDocument();
+            
+            foreach (Trigger t in fired)
+            {
+
+                XmlElement alarm = doc.CreateElement("alarm");
+                alarm.SetAttribute("node", node);
+
+                XmlElement val = doc.CreateElement("value");
+                val.InnerText = t.value.ToString();
+                alarm.AppendChild(val);
+
+                XmlElement cond = doc.CreateElement("condition");
+                cond.InnerText = t.condition;
+                alarm.AppendChild(cond);
+
+                XmlElement err = doc.CreateElement("error-message");
+                err.InnerText = t.errorMessage;
+                alarm.AppendChild(err);
+
+                XmlElement date = doc.CreateElement("date");
+                date.InnerText = t.date.ToString();
+                alarm.AppendChild(date);
+            }
+
+            SendData(doc);
+           
+        }
+
+        private static void SendData(XmlDocument triggers)
+        {
+            MqttClient m_cClient = new MqttClient(Properties.Settings.Default.BrokerIP);
+
+            m_cClient.Connect(Guid.NewGuid().ToString());
+
+            if (!m_cClient.IsConnected)
+            {
+                Console.WriteLine("Error connecting to message broker...");
+                return;
+            }
+            m_cClient.Publish("alarm", Encoding.UTF8.GetBytes(triggers.OuterXml));
+            Console.WriteLine("Sent");
         }
 
         void ReceiveData()
