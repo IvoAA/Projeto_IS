@@ -78,7 +78,7 @@ namespace SmartH2O_SeeAPP
             dataGridViewLogs.Rows.Clear();
             string element = comboBoxLogsElement.SelectedItem.ToString();
             Service1Client serviceClient = new Service1Client();
-            
+
             //escolham dia 15 de dezembro porque só temos registos nesse dia por enquanto
             string date = dateTimePickerLogsDaily.Value.ToString("dd/MM/yyyy");
             string[] sum = serviceClient.GetSumInformationAtDay(date, element);
@@ -96,7 +96,7 @@ namespace SmartH2O_SeeAPP
             }
         }
 
-        private void printWeeklyData ()
+        private void printWeeklyData()
         {
             dataGridViewLogs.Rows.Clear();
             string element = comboBoxLogsElement.SelectedItem.ToString();
@@ -116,7 +116,7 @@ namespace SmartH2O_SeeAPP
                 dataGridViewLogs.Rows[i].Cells[3].Value = sums[1];
                 i++;
             }
-            
+
         }
 
         private void comboBoxLogsElement_SelectedIndexChanged(object sender, EventArgs e)
@@ -132,7 +132,8 @@ namespace SmartH2O_SeeAPP
             dataGridViewAlarms.Rows.Clear();
             //string element = "PH";
             string[] lista = new string[] { };
-            if (checkBoxAll.Checked == false) { 
+            if (checkBoxAll.Checked == false)
+            {
                 lista = checkedListBoxAlarms.CheckedItems.OfType<string>().ToArray();
             }
             Service1Client serviceClient = new Service1Client();
@@ -151,7 +152,7 @@ namespace SmartH2O_SeeAPP
                 dataGridViewAlarms.Rows[i].Cells[3].Value = sums[2]; //description
                 i++;
             }
-            
+
         }
 
         private void comboBoxStatistics_SelectedIndexChanged(object sender, EventArgs e)
@@ -166,50 +167,64 @@ namespace SmartH2O_SeeAPP
             {
                 ;//cenas
             }
-            
+
         }
 
         private void buttonStatisticsDaily_Click(object sender, EventArgs e)
         {
-            //chart.Titles;
-            //chart.Series;
-            Service1Client serviceClient = new Service1Client();
 
+            // Funciona para 1 parametro, podes alterar para os 3 , mas tens de repetir tudo o que esta entre o START e o END 3x, e nos nomes pode se por a dizer o param
+            // tipo chart.Series[0].Name = "PH Min";
+
+
+            chart.Series.Clear();
+            chart.Titles.Clear();
             string date = dateTimePickerStatisticsDaily.Value.ToString("dd/MM/yyyy");
-            string[] sum = serviceClient.GetSumInformationAtDay(date, "PH");
 
-            Series[] avg = new Series[24];
+            Service1Client serviceClient = new Service1Client();
+            string[] paramVals = serviceClient.GetSumInformationAtDay(date, "PH");
 
-            for (int j = 0; j < 23; j++)
+            //   START
+            Series min = new Series();
+            Series max = new Series();
+            Series avg = new Series();
+
+
+            string[] sums = paramVals[0].Split(';');
+
+            for (int j = 0; j < 24; j++)
             {
-                avg[j] = new Series();
-                
-                avg[j].Points.Add(j, j);
+                min.Points.AddXY(j + 1, Convert.ToDouble(sums[1]));
+                max.Points.AddXY(j + 1, Convert.ToDouble(sums[2]));
+                avg.Points.AddXY(j + 1, Convert.ToDouble(sums[3]));
+            }
+            chart.Series.Add(min);
+            chart.Series.Add(max);
+            chart.Series.Add(avg);
 
-                chart.Series.Add(avg[j]);
+
+
+            chart.Series[0].Name = "Min";
+            chart.Series[1].Name = "Max";
+            chart.Series[2].Name = "Avg";
+
+            for (int i = 0; i < 3; i++)
+            {
+                chart.Series[i].ChartType = SeriesChartType.Spline;
             }
 
-            /*int i = 0;
-            foreach (var hour in sum)
-            {
-                //this.dataGridViewLogs.Rows.Add();
-                string[] sums = hour.Split(';');
-                avg[i].Points.Add(i, double.Parse(sums[3]));
+            //   END
 
-                /*dataGridViewLogs.Rows[i].Cells[0].Value = sums[0] + "h00"; //time
-                dataGridViewLogs.Rows[i].Cells[1].Value = sums[1]; //minimum
-                dataGridViewLogs.Rows[i].Cells[2].Value = sums[3]; //average
-                dataGridViewLogs.Rows[i].Cells[3].Value = sums[2]; //maximum
-                chart.Series.Add(avg[i]);
-                i++;
-            }*/
 
             chart.ChartAreas[0].AxisX.Minimum = 1;
             chart.ChartAreas[0].AxisX.Maximum = 24;
-            chart.ChartAreas[0].AxisY.Minimum = 1;
-            chart.ChartAreas[0].AxisY.Maximum = 15;
+            chart.ChartAreas[0].AxisY.Minimum = 0;
+            chart.ChartAreas[0].AxisY.Maximum = 20;
+            chart.ChartAreas[0].AxisX.Title = "Hours";
+            chart.ChartAreas[0].AxisY.Title = "Values";
+            chart.Titles.Add("Parameters Info " + date);
 
         }
-    }
+    }   
 }
 
