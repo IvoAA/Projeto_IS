@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SmartH2O_SeeAPP.SmartH2O_Service;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace SmartH2O_SeeAPP
 {
@@ -18,6 +19,7 @@ namespace SmartH2O_SeeAPP
             InitializeComponent();
             comboBoxLogsTime.SelectedIndex = 0;
             comboBoxLogsElement.SelectedIndex = 0;
+            comboBoxStatistics.SelectedIndex = 0;
             groupBoxLogsHourly.Location = new Point(54, 44);
         }
 
@@ -152,6 +154,62 @@ namespace SmartH2O_SeeAPP
             
         }
 
+        private void comboBoxStatistics_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            groupBoxStatisticsHourly.Visible = false;
+
+            if (comboBoxStatistics.SelectedIndex == 0)
+            {
+                groupBoxStatisticsHourly.Visible = true;
+            }
+            else if (comboBoxStatistics.SelectedIndex == 1)
+            {
+                ;//cenas
+            }
+            
+        }
+
+        private void buttonStatisticsDaily_Click(object sender, EventArgs e)
+        {
+            //chart.Titles;
+            //chart.Series;
+            Service1Client serviceClient = new Service1Client();
+
+            string date = dateTimePickerStatisticsDaily.Value.ToString("dd/MM/yyyy");
+            string[] sum = serviceClient.GetSumInformationAtDay(date, "PH");
+
+            Series[] avg = new Series[24];
+
+            for (int j = 0; j < 23; j++)
+            {
+                avg[j] = new Series();
+                
+                avg[j].Points.Add(j, j);
+
+                chart.Series.Add(avg[j]);
+            }
+
+            /*int i = 0;
+            foreach (var hour in sum)
+            {
+                //this.dataGridViewLogs.Rows.Add();
+                string[] sums = hour.Split(';');
+                avg[i].Points.Add(i, double.Parse(sums[3]));
+
+                /*dataGridViewLogs.Rows[i].Cells[0].Value = sums[0] + "h00"; //time
+                dataGridViewLogs.Rows[i].Cells[1].Value = sums[1]; //minimum
+                dataGridViewLogs.Rows[i].Cells[2].Value = sums[3]; //average
+                dataGridViewLogs.Rows[i].Cells[3].Value = sums[2]; //maximum
+                chart.Series.Add(avg[i]);
+                i++;
+            }*/
+
+            chart.ChartAreas[0].AxisX.Minimum = 1;
+            chart.ChartAreas[0].AxisX.Maximum = 24;
+            chart.ChartAreas[0].AxisY.Minimum = 1;
+            chart.ChartAreas[0].AxisY.Maximum = 15;
+
+        }
     }
 }
 
