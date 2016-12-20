@@ -161,29 +161,30 @@ namespace SmartH2O_SeeAPP
             string element = comboBoxStatisticsElement.SelectedItem.ToString();
             Service1Client serviceClient = new Service1Client();
 
-            Dictionary<int, double[]> dict = serviceClient.GetSumInformationByWeek(element);
+            DateTime start_date = dateTimePickerStatistics.Value.Date;
+            DateTime finish_date = start_date.AddDays(7);
+
+            Dictionary<DateTime, double[]> dict = serviceClient.GetSumInformationBetweenDates(start_date, finish_date, element);
 
             List<string> lista = new List<string>();
-            
-            int i = 0;
-            foreach (var week in dict.Keys)
-            {
-                double[] sums = dict[week];
 
+            int i = 0;
+            foreach (var day in dict.Keys)
+            {
+                double[] sums = dict[day];
+                
                 if (sums.Length > 0)
                 {
-                    lista.Add((week.ToString() + ";" + sums[0] + ";" + sums[1] + ";" + sums[2]));
+                    lista.Add((day.ToString("dd/MM/yyyy") + ";" + sums[0] + ";" + sums[1] + ";" + sums[2]));
                 }
-                /*
-                week.ToString(); //Time
-                sums[0]; //Minimum
-                sums[2]; //Average
-                sums[1]; //Maximum*/
                 i++;
             }
+
+            //-----------------------------------------------------------------------------------------
+
             
             string[] result = lista.Select(x => x.ToString()).ToArray();
-            createGraph(result, "Day", "Values", "Parameters Info on Week");
+            createGraph(result, "Day", "Values", "Parameters Info on Days");
 
         }
 
