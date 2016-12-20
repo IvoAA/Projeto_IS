@@ -19,7 +19,8 @@ namespace SmartH2O_SeeAPP
             InitializeComponent();
             comboBoxLogsTime.SelectedIndex = 0;
             comboBoxLogsElement.SelectedIndex = 0;
-            comboBoxStatistics.SelectedIndex = 0;
+            comboBoxStatisticsTime.SelectedIndex = 0;
+            comboBoxStatisticsElement.SelectedIndex = 0;
             groupBoxLogsHourly.Location = new Point(54, 44);
         }
 
@@ -130,7 +131,6 @@ namespace SmartH2O_SeeAPP
         private void buttonAlarmsPrint_Click(object sender, EventArgs e)
         {
             dataGridViewAlarms.Rows.Clear();
-            //string element = "PH";
             string[] lista = new string[] { };
             if (checkBoxAll.Checked == false)
             {
@@ -155,76 +155,102 @@ namespace SmartH2O_SeeAPP
 
         }
 
-        private void comboBoxStatistics_SelectedIndexChanged(object sender, EventArgs e)
+        private void displayGraphWithWeeklyData()
         {
-            groupBoxStatisticsHourly.Visible = false;
 
-            if (comboBoxStatistics.SelectedIndex == 0)
+            string element = comboBoxStatisticsElement.SelectedItem.ToString();
+            Service1Client serviceClient = new Service1Client();
+
+            Dictionary<int, double[]> dict = serviceClient.GetSumInformationByWeek(element);
+
+            List<string> lista = new List<string>();
+            
+            int i = 0;
+            foreach (var week in dict.Keys)
             {
-                groupBoxStatisticsHourly.Visible = true;
+                double[] sums = dict[week];
+
+                if (sums.Length > 0)
+                {
+                    lista.Add((week.ToString() + ";" + sums[0] + ";" + sums[1] + ";" + sums[2]));
+                }
+                /*
+                week.ToString(); //Time
+                sums[0]; //Minimum
+                sums[2]; //Average
+                sums[1]; //Maximum*/
+                i++;
             }
-            else if (comboBoxStatistics.SelectedIndex == 1)
-            {
-                ;//cenas
-            }
+            
+            string[] result = lista.Select(x => x.ToString()).ToArray();
+            createGraph(result, "Day", "Values", "Parameters Info on Week");
 
         }
 
-        private void buttonStatisticsDaily_Click(object sender, EventArgs e)
+        private bool createGraph (string[] paramVals, string XTitle, string YTitle, string Title)
         {
-
-            // Funciona para 1 parametro, podes alterar para os 3 , mas tens de repetir tudo o que esta entre o START e o END 3x, e nos nomes pode se por a dizer o param
-            // tipo chart.Series[0].Name = "PH Min";
-
-
             chart.Series.Clear();
             chart.Titles.Clear();
-            string date = dateTimePickerStatisticsDaily.Value.ToString("dd/MM/yyyy");
-
-            Service1Client serviceClient = new Service1Client();
-            string[] paramVals = serviceClient.GetSumInformationAtDay(date, "PH");
-
+            if (paramVals.Length <= 0) return false;
+            
             //   START
             Series min = new Series();
             Series max = new Series();
             Series avg = new Series();
+                
 
-
-            string[] sums = paramVals[0].Split(';');
-
-            for (int j = 0; j < 24; j++)
+            foreach (string row in paramVals)
             {
-                min.Points.AddXY(j + 1, Convert.ToDouble(sums[1]));
-                max.Points.AddXY(j + 1, Convert.ToDouble(sums[2]));
-                avg.Points.AddXY(j + 1, Convert.ToDouble(sums[3]));
+                string[] sums = row.Split(';');
+
+                min.Points.AddXY(sums[0], Convert.ToDouble(sums[1]));
+                max.Points.AddXY(sums[0], Convert.ToDouble(sums[2]));
+                avg.Points.AddXY(sums[0], Convert.ToDouble(sums[3]));
+
             }
-            chart.Series.Add(min);
             chart.Series.Add(max);
             chart.Series.Add(avg);
+            chart.Series.Add(min);
 
 
 
-            chart.Series[0].Name = "Min";
-            chart.Series[1].Name = "Max";
-            chart.Series[2].Name = "Avg";
+            chart.Series[0].Name = "Max";
+            chart.Series[1].Name = "Avg";
+            chart.Series[2].Name = "Min";
 
             for (int i = 0; i < 3; i++)
             {
-                chart.Series[i].ChartType = SeriesChartType.Spline;
+                chart.Series[i].ChartType = SeriesChartType.SplineArea;
+            }
+            chart.ChartAreas[0].AxisX.Interval = 1;
+            chart.ChartAreas[0].AxisX.Title = XTitle;
+            chart.ChartAreas[0].AxisY.Title = YTitle;
+            chart.Titles.Add(Title);
+
+            return true;
+        }
+
+        private void buttonStatisticsDaily_Click(object sender, EventArgs e)
+        {
+            
+            string date = dateTimePickerStatistics.Value.ToString("dd/MM/yyyy");
+
+            string element = comboBoxStatisticsElement.SelectedItem.ToString();
+            Service1Client serviceClient = new Service1Client();
+
+            if (comboBoxStatisticsTime.SelectedIndex == 0) { 
+                string[] paramVals = serviceClient.GetSumInformationAtDay(date, element);
+
+                if ( !createGraph(paramVals, "Hours", "Values", "Parameters Info " + date) )
+                    System.Windows.Forms.MessageBox.Show("No data found!");
+
+            }else
+            {
+                displayGraphWithWeeklyData();
             }
 
-            //   END
-
-
-            chart.ChartAreas[0].AxisX.Minimum = 1;
-            chart.ChartAreas[0].AxisX.Maximum = 24;
-            chart.ChartAreas[0].AxisY.Minimum = 0;
-            chart.ChartAreas[0].AxisY.Maximum = 20;
-            chart.ChartAreas[0].AxisX.Title = "Hours";
-            chart.ChartAreas[0].AxisY.Title = "Values";
-            chart.Titles.Add("Parameters Info " + date);
-
         }
+
     }   
 }
 

@@ -37,7 +37,7 @@ namespace SmartH2O_Service
 
             foreach (XmlNode node in nodes)
             {
-                int hour = int.Parse(node.ChildNodes[2].InnerText.Split(' ')[1].Substring(0, 2));
+                int hour = int.Parse(node.ChildNodes[2].InnerText.Split(' ')[1].Split(':')[0]);
 
                 string value = node.ChildNodes[1].InnerText.Replace(".", ",");
                 values[hour - 1].Add(double.Parse(value));
@@ -145,7 +145,7 @@ namespace SmartH2O_Service
             foreach (int week in dict.Keys.ToList())
             {
                 List<double> vals = dict[week];
-                double min = vals.Min(), max = vals.Max(), avg = vals.Average();
+                double min = vals.Min(), max = vals.Max(), avg = Math.Round(vals.Average(),2);
                 vals.Clear();
                 vals.Add(min);
                 vals.Add(max);

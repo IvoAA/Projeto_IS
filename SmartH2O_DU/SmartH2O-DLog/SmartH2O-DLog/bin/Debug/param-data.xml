@@ -2,326 +2,421 @@
   <sensor element="PH">
     <id>1</id>
     <value>6.3</value>
-    <date>19/12/2016 20:34:44</date>
+    <date>13/12/2016 8:34:44</date>
   </sensor>
   <sensor element="NH3">
     <id>2</id>
     <value>1.1</value>
-    <date>19/12/2016 20:34:45</date>
+    <date>13/12/2016 8:34:45</date>
   </sensor>
   <sensor element="CI2">
     <id>3</id>
-    <value>11.2</value>
-    <date>19/12/2016 20:34:46</date>
+    <value>12</value>
+    <date>13/12/2016 8:34:46</date>
   </sensor>
   <sensor element="PH">
     <id>1</id>
-    <value>5.5</value>
-    <date>19/12/2016 20:34:47</date>
+    <value>2.5</value>
+    <date>13/12/2016 8:34:47</date>
   </sensor>
   <sensor element="NH3">
     <id>2</id>
     <value>1.22</value>
-    <date>19/12/2016 20:34:48</date>
+    <date>13/12/2016 9:34:48</date>
   </sensor>
   <sensor element="CI2">
     <id>3</id>
-    <value>10.5</value>
-    <date>19/12/2016 20:34:49</date>
+    <value>14.5</value>
+    <date>13/12/2016 9:34:49</date>
   </sensor>
   <sensor element="PH">
     <id>1</id>
-    <value>5.0</value>
-    <date>19/12/2016 20:34:50</date>
+    <value>8.0</value>
+    <date>13/12/2016 9:34:50</date>
   </sensor>
   <sensor element="NH3">
     <id>2</id>
-    <value>1.36</value>
-    <date>19/12/2016 20:34:51</date>
+    <value>4.36</value>
+    <date>13/12/2016 9:34:51</date>
   </sensor>
   <sensor element="CI2">
     <id>3</id>
     <value>9.3</value>
-    <date>19/12/2016 20:34:52</date>
+    <date>13/12/2016 9:34:52</date>
   </sensor>
   <sensor element="PH">
     <id>1</id>
-    <value>5.5</value>
-    <date>19/12/2016 20:34:53</date>
+    <value>9.7</value>
+    <date>13/12/2016 10:34:53</date>
   </sensor>
   <sensor element="NH3">
     <id>2</id>
     <value>1.9</value>
-    <date>19/12/2016 20:34:54</date>
+    <date>13/12/2016 10:34:54</date>
   </sensor>
   <sensor element="CI2">
     <id>3</id>
     <value>7.0</value>
-    <date>19/12/2016 20:34:55</date>
+    <date>13/12/2016 10:34:55</date>
   </sensor>
   <sensor element="PH">
     <id>1</id>
-    <value>6.1</value>
-    <date>19/12/2016 20:34:56</date>
+    <value>2.1</value>
+    <date>13/12/2016 10:34:56</date>
   </sensor>
   <sensor element="NH3">
     <id>2</id>
     <value>1.25</value>
-    <date>19/12/2016 20:34:57</date>
+    <date>13/12/2016 11:34:57</date>
   </sensor>
   <sensor element="CI2">
     <id>3</id>
     <value>11.4</value>
-    <date>19/12/2016 20:34:58</date>
+    <date>13/12/2016 11:34:58</date>
   </sensor>
   <sensor element="PH">
     <id>1</id>
     <value>5.0</value>
-    <date>19/12/2016 20:34:59</date>
+    <date>13/12/2016 11:34:59</date>
   </sensor>
   <sensor element="NH3">
     <id>2</id>
     <value>1.4</value>
-    <date>19/12/2016 20:35:00</date>
+    <date>13/12/2016 11:35:00</date>
   </sensor>
   <sensor element="CI2">
     <id>3</id>
     <value>9.1</value>
-    <date>19/12/2016 20:35:01</date>
+    <date>13/12/2016 12:35:01</date>
   </sensor>
   <sensor element="PH">
     <id>1</id>
-    <value>6.8</value>
-    <date>19/12/2016 20:35:02</date>
+    <value>7.9</value>
+    <date>13/12/2016 12:35:02</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>1</value>
+    <date>20/12/2016 8:34:44</date>
   </sensor>
   <sensor element="NH3">
     <id>2</id>
-    <value>1.84</value>
-    <date>19/12/2016 20:35:03</date>
+    <value>5.0</value>
+    <date>20/12/2016 8:34:45</date>
   </sensor>
   <sensor element="CI2">
     <id>3</id>
-    <value>8.1</value>
-    <date>19/12/2016 20:35:04</date>
+    <value>12</value>
+    <date>20/12/2016 8:34:46</date>
   </sensor>
   <sensor element="PH">
     <id>1</id>
-    <value>6.7</value>
-    <date>19/12/2016 20:35:05</date>
+    <value>2.5</value>
+    <date>20/12/2016 8:34:47</date>
   </sensor>
   <sensor element="NH3">
     <id>2</id>
-    <value>1.80</value>
-    <date>19/12/2016 20:35:06</date>
+    <value>1.22</value>
+    <date>20/12/2016 9:34:48</date>
   </sensor>
   <sensor element="CI2">
     <id>3</id>
-    <value>11.2</value>
-    <date>19/12/2016 20:35:07</date>
+    <value>14.5</value>
+    <date>20/12/2016 9:34:49</date>
   </sensor>
   <sensor element="PH">
     <id>1</id>
-    <value>6.8</value>
-    <date>19/12/2016 20:35:08</date>
+    <value>8.0</value>
+    <date>20/12/2016 9:34:50</date>
   </sensor>
   <sensor element="NH3">
     <id>2</id>
-    <value>1.97</value>
-    <date>19/12/2016 20:35:09</date>
+    <value>4.36</value>
+    <date>20/12/2016 9:34:51</date>
   </sensor>
   <sensor element="CI2">
     <id>3</id>
-    <value>9.2</value>
-    <date>19/12/2016 20:35:10</date>
+    <value>9.3</value>
+    <date>20/12/2016 9:34:52</date>
   </sensor>
   <sensor element="PH">
     <id>1</id>
-    <value>6.4</value>
-    <date>19/12/2016 20:35:11</date>
+    <value>12.5</value>
+    <date>20/12/2016 10:34:53</date>
   </sensor>
   <sensor element="NH3">
     <id>2</id>
-    <value>1.54</value>
-    <date>19/12/2016 20:35:12</date>
+    <value>1.9</value>
+    <date>20/12/2016 10:34:54</date>
   </sensor>
   <sensor element="CI2">
     <id>3</id>
-    <value>8.6</value>
-    <date>19/12/2016 20:35:13</date>
+    <value>7.0</value>
+    <date>20/12/2016 10:34:55</date>
   </sensor>
   <sensor element="PH">
     <id>1</id>
-    <value>5.1</value>
-    <date>19/12/2016 20:35:14</date>
+    <value>2.1</value>
+    <date>20/12/2016 10:34:56</date>
   </sensor>
   <sensor element="NH3">
     <id>2</id>
-    <value>1.85</value>
-    <date>19/12/2016 20:35:15</date>
+    <value>1.25</value>
+    <date>20/12/2016 11:34:57</date>
   </sensor>
   <sensor element="CI2">
     <id>3</id>
-    <value>11.5</value>
-    <date>19/12/2016 20:35:16</date>
-  </sensor>
-  <sensor element="PH">
-    <id>1</id>
-    <value>6.1</value>
-    <date>19/12/2016 20:35:17</date>
-  </sensor>
-  <sensor element="NH3">
-    <id>2</id>
-    <value>1.21</value>
-    <date>19/12/2016 20:35:18</date>
-  </sensor>
-  <sensor element="CI2">
-    <id>3</id>
-    <value>10.4</value>
-    <date>19/12/2016 20:35:19</date>
-  </sensor>
-  <sensor element="PH">
-    <id>1</id>
-    <value>6.5</value>
-    <date>19/12/2016 20:35:20</date>
-  </sensor>
-  <sensor element="NH3">
-    <id>2</id>
-    <value>1.40</value>
-    <date>19/12/2016 20:35:21</date>
-  </sensor>
-  <sensor element="CI2">
-    <id>3</id>
-    <value>8.3</value>
-    <date>19/12/2016 20:35:22</date>
-  </sensor>
-  <sensor element="PH">
-    <id>1</id>
-    <value>5.7</value>
-    <date>19/12/2016 20:35:23</date>
-  </sensor>
-  <sensor element="NH3">
-    <id>2</id>
-    <value>1.81</value>
-    <date>19/12/2016 20:35:24</date>
-  </sensor>
-  <sensor element="CI2">
-    <id>3</id>
-    <value>9.8</value>
-    <date>19/12/2016 20:35:25</date>
-  </sensor>
-  <sensor element="PH">
-    <id>1</id>
-    <value>5.2</value>
-    <date>19/12/2016 20:35:26</date>
-  </sensor>
-  <sensor element="NH3">
-    <id>2</id>
-    <value>1.42</value>
-    <date>19/12/2016 20:35:27</date>
-  </sensor>
-  <sensor element="CI2">
-    <id>3</id>
-    <value>7.8</value>
-    <date>19/12/2016 20:35:28</date>
-  </sensor>
-  <sensor element="PH">
-    <id>1</id>
-    <value>6.1</value>
-    <date>19/12/2016 20:35:29</date>
-  </sensor>
-  <sensor element="NH3">
-    <id>2</id>
-    <value>1.1</value>
-    <date>19/12/2016 20:35:30</date>
-  </sensor>
-  <sensor element="PH">
-    <id>1</id>
-    <value>6.2</value>
-    <date>19/12/2016 20:35:42</date>
-  </sensor>
-  <sensor element="NH3">
-    <id>2</id>
-    <value>1.60</value>
-    <date>19/12/2016 20:35:43</date>
-  </sensor>
-  <sensor element="CI2">
-    <id>3</id>
-    <value>8.1</value>
-    <date>19/12/2016 20:35:44</date>
-  </sensor>
-  <sensor element="PH">
-    <id>1</id>
-    <value>6.5</value>
-    <date>19/12/2016 20:35:45</date>
-  </sensor>
-  <sensor element="NH3">
-    <id>2</id>
-    <value>1.78</value>
-    <date>19/12/2016 20:35:46</date>
-  </sensor>
-  <sensor element="CI2">
-    <id>3</id>
-    <value>7.8</value>
-    <date>19/12/2016 20:35:47</date>
-  </sensor>
-  <sensor element="PH">
-    <id>1</id>
-    <value>5.4</value>
-    <date>19/12/2016 20:35:48</date>
-  </sensor>
-  <sensor element="NH3">
-    <id>2</id>
-    <value>1.52</value>
-    <date>19/12/2016 20:35:49</date>
-  </sensor>
-  <sensor element="CI2">
-    <id>3</id>
-    <value>7.7</value>
-    <date>19/12/2016 20:35:50</date>
-  </sensor>
-  <sensor element="PH">
-    <id>1</id>
-    <value>6.7</value>
-    <date>19/12/2016 20:35:51</date>
-  </sensor>
-  <sensor element="NH3">
-    <id>2</id>
-    <value>1.3</value>
-    <date>19/12/2016 20:35:52</date>
-  </sensor>
-  <sensor element="CI2">
-    <id>3</id>
-    <value>10.7</value>
-    <date>19/12/2016 20:35:53</date>
+    <value>11.4</value>
+    <date>20/12/2016 11:34:58</date>
   </sensor>
   <sensor element="PH">
     <id>1</id>
     <value>5.0</value>
-    <date>19/12/2016 20:35:54</date>
+    <date>20/12/2016 11:34:59</date>
   </sensor>
   <sensor element="NH3">
     <id>2</id>
-    <value>1.15</value>
-    <date>19/12/2016 20:35:55</date>
+    <value>1.4</value>
+    <date>20/12/2016 11:35:00</date>
   </sensor>
   <sensor element="CI2">
     <id>3</id>
-    <value>8.7</value>
-    <date>19/12/2016 20:35:56</date>
+    <value>9.1</value>
+    <date>20/12/2016 12:35:01</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>7.9</value>
+    <date>20/12/2016 12:35:02</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.84</value>
+    <date>20/12/2016 12:35:03</date>
+  </sensor>
+  <sensor element="CI2">
+    <id>3</id>
+    <value>8.1</value>
+    <date>20/12/2016 12:35:04</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>1.1</value>
+    <date>20/12/2016 13:35:05</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.80</value>
+    <date>20/12/2016 13:35:06</date>
+  </sensor>
+  <sensor element="CI2">
+    <id>3</id>
+    <value>11.2</value>
+    <date>20/12/2016 13:35:07</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>2</value>
+    <date>20/12/2016 13:35:08</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.97</value>
+    <date>20/12/2016 14:35:09</date>
+  </sensor>
+  <sensor element="CI2">
+    <id>3</id>
+    <value>9.2</value>
+    <date>20/12/2016 14:35:10</date>
   </sensor>
   <sensor element="PH">
     <id>1</id>
     <value>6.4</value>
-    <date>19/12/2016 20:35:57</date>
+    <date>20/12/2016 14:35:11</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.54</value>
+    <date>20/12/2016 14:35:12</date>
+  </sensor>
+  <sensor element="CI2">
+    <id>3</id>
+    <value>8.6</value>
+    <date>20/12/2016 15:35:13</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.1</value>
+    <date>20/12/2016 15:35:14</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.85</value>
+    <date>20/12/2016 15:35:15</date>
+  </sensor>
+  <sensor element="CI2">
+    <id>3</id>
+    <value>11.5</value>
+    <date>20/12/2016 15:35:16</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>8</value>
+    <date>20/12/2016 16:35:17</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.21</value>
+    <date>20/12/2016 16:35:18</date>
+  </sensor>
+  <sensor element="CI2">
+    <id>3</id>
+    <value>10.4</value>
+    <date>20/12/2016 16:35:19</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>9</value>
+    <date>20/12/2016 17:35:20</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.40</value>
+    <date>20/12/2016 17:35:21</date>
+  </sensor>
+  <sensor element="CI2">
+    <id>3</id>
+    <value>8.3</value>
+    <date>20/12/2016 17:35:22</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>2.3</value>
+    <date>20/12/2016 17:35:23</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.81</value>
+    <date>20/12/2016 18:35:24</date>
+  </sensor>
+  <sensor element="CI2">
+    <id>3</id>
+    <value>9.8</value>
+    <date>20/12/2016 18:35:25</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.2</value>
+    <date>20/12/2016 18:35:26</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.42</value>
+    <date>20/12/2016 18:35:27</date>
+  </sensor>
+  <sensor element="CI2">
+    <id>3</id>
+    <value>7.8</value>
+    <date>20/12/2016 19:35:28</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>7.9</value>
+    <date>20/12/2016 19:35:29</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.1</value>
+    <date>20/12/2016 19:35:30</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>10</value>
+    <date>20/12/2016 19:35:42</date>
   </sensor>
   <sensor element="NH3">
     <id>2</id>
     <value>1.60</value>
-    <date>19/12/2016 20:35:58</date>
+    <date>20/12/2016 20:35:43</date>
+  </sensor>
+  <sensor element="CI2">
+    <id>3</id>
+    <value>8.1</value>
+    <date>20/12/2016 20:35:44</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>11</value>
+    <date>20/12/2016 20:35:45</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.78</value>
+    <date>20/12/2016 20:35:46</date>
+  </sensor>
+  <sensor element="CI2">
+    <id>3</id>
+    <value>7.8</value>
+    <date>20/12/2016 20:35:47</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.4</value>
+    <date>20/12/2016 20:35:48</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.52</value>
+    <date>20/12/2016 20:35:49</date>
+  </sensor>
+  <sensor element="CI2">
+    <id>3</id>
+    <value>7.7</value>
+    <date>20/12/2016 20:35:50</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>6.7</value>
+    <date>20/12/2016 20:35:51</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.3</value>
+    <date>20/12/2016 20:35:52</date>
+  </sensor>
+  <sensor element="CI2">
+    <id>3</id>
+    <value>10.7</value>
+    <date>20/12/2016 20:35:53</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>5.0</value>
+    <date>20/12/2016 20:35:54</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.15</value>
+    <date>20/12/2016 20:35:55</date>
+  </sensor>
+  <sensor element="CI2">
+    <id>3</id>
+    <value>8.7</value>
+    <date>20/12/2016 21:35:56</date>
+  </sensor>
+  <sensor element="PH">
+    <id>1</id>
+    <value>6.4</value>
+    <date>20/12/2016 21:35:57</date>
+  </sensor>
+  <sensor element="NH3">
+    <id>2</id>
+    <value>1.60</value>
+    <date>20/12/2016 21:35:58</date>
   </sensor>
   <sensor element="CI2">
     <id>3</id>
     <value>10.5</value>
-    <date>19/12/2016 20:35:59</date>
+    <date>20/12/2016 21:35:59</date>
   </sensor>
 </sensors>

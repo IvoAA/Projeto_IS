@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.buttonLogsBetweenDates = new System.Windows.Forms.Button();
             this.dateTimePickerLogsStartingDate = new System.Windows.Forms.DateTimePicker();
             this.labelStartingDate = new System.Windows.Forms.Label();
@@ -66,12 +65,14 @@
             this.labelLogsEndingDate = new System.Windows.Forms.Label();
             this.dateTimePickerLogsEndingDate = new System.Windows.Forms.DateTimePicker();
             this.Statistics = new System.Windows.Forms.TabPage();
+            this.labelStatisticsElement = new System.Windows.Forms.Label();
+            this.comboBoxStatisticsElement = new System.Windows.Forms.ComboBox();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBoxStatisticsHourly = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.buttonStatisticsDaily = new System.Windows.Forms.Button();
-            this.dateTimePickerStatisticsDaily = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxStatistics = new System.Windows.Forms.ComboBox();
+            this.labelStatisticsDate = new System.Windows.Forms.Label();
+            this.buttonStatistics = new System.Windows.Forms.Button();
+            this.dateTimePickerStatistics = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxStatisticsTime = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlarms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLogs)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -432,15 +433,39 @@
             // 
             // Statistics
             // 
+            this.Statistics.Controls.Add(this.labelStatisticsElement);
+            this.Statistics.Controls.Add(this.comboBoxStatisticsElement);
             this.Statistics.Controls.Add(this.chart);
             this.Statistics.Controls.Add(this.groupBoxStatisticsHourly);
-            this.Statistics.Controls.Add(this.comboBoxStatistics);
+            this.Statistics.Controls.Add(this.comboBoxStatisticsTime);
             this.Statistics.Location = new System.Drawing.Point(4, 22);
             this.Statistics.Name = "Statistics";
             this.Statistics.Size = new System.Drawing.Size(953, 518);
             this.Statistics.TabIndex = 2;
             this.Statistics.Text = "Statistics";
             this.Statistics.UseVisualStyleBackColor = true;
+            // 
+            // labelStatisticsElement
+            // 
+            this.labelStatisticsElement.AutoSize = true;
+            this.labelStatisticsElement.Location = new System.Drawing.Point(198, 23);
+            this.labelStatisticsElement.Name = "labelStatisticsElement";
+            this.labelStatisticsElement.Size = new System.Drawing.Size(48, 13);
+            this.labelStatisticsElement.TabIndex = 23;
+            this.labelStatisticsElement.Text = "Element:";
+            // 
+            // comboBoxStatisticsElement
+            // 
+            this.comboBoxStatisticsElement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxStatisticsElement.FormattingEnabled = true;
+            this.comboBoxStatisticsElement.Items.AddRange(new object[] {
+            "PH",
+            "NH3",
+            "CI2"});
+            this.comboBoxStatisticsElement.Location = new System.Drawing.Point(252, 20);
+            this.comboBoxStatisticsElement.Name = "comboBoxStatisticsElement";
+            this.comboBoxStatisticsElement.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxStatisticsElement.TabIndex = 22;
             // 
             // chart
             // 
@@ -450,62 +475,57 @@
             this.chart.Legends.Add(legend2);
             this.chart.Location = new System.Drawing.Point(57, 97);
             this.chart.Name = "chart";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart.Series.Add(series2);
             this.chart.Size = new System.Drawing.Size(790, 365);
             this.chart.TabIndex = 21;
-            this.chart.Text = "chart1";
+            this.chart.Text = "chart";
             // 
             // groupBoxStatisticsHourly
             // 
-            this.groupBoxStatisticsHourly.Controls.Add(this.label2);
-            this.groupBoxStatisticsHourly.Controls.Add(this.buttonStatisticsDaily);
-            this.groupBoxStatisticsHourly.Controls.Add(this.dateTimePickerStatisticsDaily);
-            this.groupBoxStatisticsHourly.Location = new System.Drawing.Point(56, 44);
+            this.groupBoxStatisticsHourly.Controls.Add(this.labelStatisticsDate);
+            this.groupBoxStatisticsHourly.Controls.Add(this.buttonStatistics);
+            this.groupBoxStatisticsHourly.Controls.Add(this.dateTimePickerStatistics);
+            this.groupBoxStatisticsHourly.Location = new System.Drawing.Point(54, 44);
             this.groupBoxStatisticsHourly.Name = "groupBoxStatisticsHourly";
             this.groupBoxStatisticsHourly.Size = new System.Drawing.Size(791, 50);
             this.groupBoxStatisticsHourly.TabIndex = 20;
             this.groupBoxStatisticsHourly.TabStop = false;
             // 
-            // label2
+            // labelStatisticsDate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(78, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Date:";
+            this.labelStatisticsDate.AutoSize = true;
+            this.labelStatisticsDate.Location = new System.Drawing.Point(78, 19);
+            this.labelStatisticsDate.Name = "labelStatisticsDate";
+            this.labelStatisticsDate.Size = new System.Drawing.Size(33, 13);
+            this.labelStatisticsDate.TabIndex = 15;
+            this.labelStatisticsDate.Text = "Date:";
             // 
-            // buttonStatisticsDaily
+            // buttonStatistics
             // 
-            this.buttonStatisticsDaily.Location = new System.Drawing.Point(348, 14);
-            this.buttonStatisticsDaily.Name = "buttonStatisticsDaily";
-            this.buttonStatisticsDaily.Size = new System.Drawing.Size(75, 23);
-            this.buttonStatisticsDaily.TabIndex = 14;
-            this.buttonStatisticsDaily.Text = "Print";
-            this.buttonStatisticsDaily.UseVisualStyleBackColor = true;
-            this.buttonStatisticsDaily.Click += new System.EventHandler(this.buttonStatisticsDaily_Click);
+            this.buttonStatistics.Location = new System.Drawing.Point(348, 14);
+            this.buttonStatistics.Name = "buttonStatistics";
+            this.buttonStatistics.Size = new System.Drawing.Size(75, 23);
+            this.buttonStatistics.TabIndex = 14;
+            this.buttonStatistics.Text = "Print";
+            this.buttonStatistics.UseVisualStyleBackColor = true;
+            this.buttonStatistics.Click += new System.EventHandler(this.buttonStatisticsDaily_Click);
             // 
-            // dateTimePickerStatisticsDaily
+            // dateTimePickerStatistics
             // 
-            this.dateTimePickerStatisticsDaily.Location = new System.Drawing.Point(128, 16);
-            this.dateTimePickerStatisticsDaily.Name = "dateTimePickerStatisticsDaily";
-            this.dateTimePickerStatisticsDaily.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerStatisticsDaily.TabIndex = 14;
+            this.dateTimePickerStatistics.Location = new System.Drawing.Point(128, 16);
+            this.dateTimePickerStatistics.Name = "dateTimePickerStatistics";
+            this.dateTimePickerStatistics.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerStatistics.TabIndex = 14;
             // 
-            // comboBoxStatistics
+            // comboBoxStatisticsTime
             // 
-            this.comboBoxStatistics.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxStatistics.Items.AddRange(new object[] {
-            "Daily",
-            "Weekly"});
-            this.comboBoxStatistics.Location = new System.Drawing.Point(56, 20);
-            this.comboBoxStatistics.Name = "comboBoxStatistics";
-            this.comboBoxStatistics.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxStatistics.TabIndex = 17;
-            this.comboBoxStatistics.SelectedIndexChanged += new System.EventHandler(this.comboBoxStatistics_SelectedIndexChanged);
+            this.comboBoxStatisticsTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxStatisticsTime.Items.AddRange(new object[] {
+            "Hourly",
+            "Daily by Week"});
+            this.comboBoxStatisticsTime.Location = new System.Drawing.Point(56, 20);
+            this.comboBoxStatisticsTime.Name = "comboBoxStatisticsTime";
+            this.comboBoxStatisticsTime.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxStatisticsTime.TabIndex = 17;
             // 
             // Form1
             // 
@@ -528,6 +548,7 @@
             this.groupBoxLogsBetweenDates.ResumeLayout(false);
             this.groupBoxLogsBetweenDates.PerformLayout();
             this.Statistics.ResumeLayout(false);
+            this.Statistics.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
             this.groupBoxStatisticsHourly.ResumeLayout(false);
             this.groupBoxStatisticsHourly.PerformLayout();
@@ -573,11 +594,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Value;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.GroupBox groupBoxStatisticsHourly;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonStatisticsDaily;
-        private System.Windows.Forms.DateTimePicker dateTimePickerStatisticsDaily;
-        private System.Windows.Forms.ComboBox comboBoxStatistics;
+        private System.Windows.Forms.Label labelStatisticsDate;
+        private System.Windows.Forms.Button buttonStatistics;
+        private System.Windows.Forms.DateTimePicker dateTimePickerStatistics;
+        private System.Windows.Forms.ComboBox comboBoxStatisticsTime;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart;
+        private System.Windows.Forms.Label labelStatisticsElement;
+        private System.Windows.Forms.ComboBox comboBoxStatisticsElement;
     }
 }
 
