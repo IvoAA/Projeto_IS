@@ -65,10 +65,12 @@
             this.labelLogsEndingDate = new System.Windows.Forms.Label();
             this.dateTimePickerLogsEndingDate = new System.Windows.Forms.DateTimePicker();
             this.Statistics = new System.Windows.Forms.TabPage();
+            this.comboBoxStatisticsNaoSei = new System.Windows.Forms.ComboBox();
             this.labelStatisticsElement = new System.Windows.Forms.Label();
             this.comboBoxStatisticsElement = new System.Windows.Forms.ComboBox();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBoxStatisticsHourly = new System.Windows.Forms.GroupBox();
+            this.dateTimePickerStatisticsEndingDate = new System.Windows.Forms.DateTimePicker();
             this.labelStatisticsDate = new System.Windows.Forms.Label();
             this.buttonStatistics = new System.Windows.Forms.Button();
             this.dateTimePickerStatistics = new System.Windows.Forms.DateTimePicker();
@@ -433,6 +435,7 @@
             // 
             // Statistics
             // 
+            this.Statistics.Controls.Add(this.comboBoxStatisticsNaoSei);
             this.Statistics.Controls.Add(this.labelStatisticsElement);
             this.Statistics.Controls.Add(this.comboBoxStatisticsElement);
             this.Statistics.Controls.Add(this.chart);
@@ -444,6 +447,20 @@
             this.Statistics.TabIndex = 2;
             this.Statistics.Text = "Statistics";
             this.Statistics.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxStatisticsNaoSei
+            // 
+            this.comboBoxStatisticsNaoSei.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxStatisticsNaoSei.FormattingEnabled = true;
+            this.comboBoxStatisticsNaoSei.Items.AddRange(new object[] {
+            "Minimum",
+            "Maximum",
+            "Average"});
+            this.comboBoxStatisticsNaoSei.Location = new System.Drawing.Point(402, 20);
+            this.comboBoxStatisticsNaoSei.Name = "comboBoxStatisticsNaoSei";
+            this.comboBoxStatisticsNaoSei.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxStatisticsNaoSei.TabIndex = 24;
+            this.comboBoxStatisticsNaoSei.Visible = false;
             // 
             // labelStatisticsElement
             // 
@@ -461,26 +478,35 @@
             this.comboBoxStatisticsElement.Items.AddRange(new object[] {
             "PH",
             "NH3",
-            "CI2"});
+            "CI2",
+            "All"});
             this.comboBoxStatisticsElement.Location = new System.Drawing.Point(252, 20);
             this.comboBoxStatisticsElement.Name = "comboBoxStatisticsElement";
             this.comboBoxStatisticsElement.Size = new System.Drawing.Size(121, 21);
             this.comboBoxStatisticsElement.TabIndex = 22;
+            this.comboBoxStatisticsElement.SelectedIndexChanged += new System.EventHandler(this.comboBoxStatisticsElement_SelectedIndexChanged);
             // 
             // chart
             // 
+            chartArea2.Area3DStyle.Enable3D = true;
             chartArea2.Name = "ChartArea1";
             this.chart.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chart.Legends.Add(legend2);
             this.chart.Location = new System.Drawing.Point(57, 97);
             this.chart.Name = "chart";
+            this.chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.chart.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.OliveDrab,
+        System.Drawing.Color.Gold,
+        System.Drawing.Color.LightSeaGreen};
             this.chart.Size = new System.Drawing.Size(790, 365);
             this.chart.TabIndex = 21;
             this.chart.Text = "chart";
             // 
             // groupBoxStatisticsHourly
             // 
+            this.groupBoxStatisticsHourly.Controls.Add(this.dateTimePickerStatisticsEndingDate);
             this.groupBoxStatisticsHourly.Controls.Add(this.labelStatisticsDate);
             this.groupBoxStatisticsHourly.Controls.Add(this.buttonStatistics);
             this.groupBoxStatisticsHourly.Controls.Add(this.dateTimePickerStatistics);
@@ -489,6 +515,14 @@
             this.groupBoxStatisticsHourly.Size = new System.Drawing.Size(791, 50);
             this.groupBoxStatisticsHourly.TabIndex = 20;
             this.groupBoxStatisticsHourly.TabStop = false;
+            // 
+            // dateTimePickerStatisticsEndingDate
+            // 
+            this.dateTimePickerStatisticsEndingDate.Location = new System.Drawing.Point(348, 16);
+            this.dateTimePickerStatisticsEndingDate.Name = "dateTimePickerStatisticsEndingDate";
+            this.dateTimePickerStatisticsEndingDate.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerStatisticsEndingDate.TabIndex = 16;
+            this.dateTimePickerStatisticsEndingDate.Visible = false;
             // 
             // labelStatisticsDate
             // 
@@ -507,7 +541,7 @@
             this.buttonStatistics.TabIndex = 14;
             this.buttonStatistics.Text = "Print";
             this.buttonStatistics.UseVisualStyleBackColor = true;
-            this.buttonStatistics.Click += new System.EventHandler(this.buttonStatisticsDaily_Click);
+            this.buttonStatistics.Click += new System.EventHandler(this.buttonStatistics_Click);
             // 
             // dateTimePickerStatistics
             // 
@@ -521,11 +555,13 @@
             this.comboBoxStatisticsTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStatisticsTime.Items.AddRange(new object[] {
             "Hourly",
-            "Daily by Week"});
+            "Daily by Week",
+            "Between Dates"});
             this.comboBoxStatisticsTime.Location = new System.Drawing.Point(56, 20);
             this.comboBoxStatisticsTime.Name = "comboBoxStatisticsTime";
             this.comboBoxStatisticsTime.Size = new System.Drawing.Size(121, 21);
             this.comboBoxStatisticsTime.TabIndex = 17;
+            this.comboBoxStatisticsTime.SelectedIndexChanged += new System.EventHandler(this.comboBoxStatisticsTime_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -601,6 +637,8 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart;
         private System.Windows.Forms.Label labelStatisticsElement;
         private System.Windows.Forms.ComboBox comboBoxStatisticsElement;
+        private System.Windows.Forms.DateTimePicker dateTimePickerStatisticsEndingDate;
+        private System.Windows.Forms.ComboBox comboBoxStatisticsNaoSei;
     }
 }
 

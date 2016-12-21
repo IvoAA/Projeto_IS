@@ -21,6 +21,7 @@ namespace SmartH2O_SeeAPP
             comboBoxLogsElement.SelectedIndex = 0;
             comboBoxStatisticsTime.SelectedIndex = 0;
             comboBoxStatisticsElement.SelectedIndex = 0;
+            comboBoxStatisticsNaoSei.SelectedIndex = 0;
             groupBoxLogsHourly.Location = new Point(54, 44);
         }
 
@@ -155,16 +156,15 @@ namespace SmartH2O_SeeAPP
 
         }
 
-        private void displayGraphWithWeeklyData()
+        private void displayGraphBetweenDates(DateTime start_date, DateTime finish_date)
         {
 
             string element = comboBoxStatisticsElement.SelectedItem.ToString();
             Service1Client serviceClient = new Service1Client();
 
-            DateTime start_date = dateTimePickerStatistics.Value.Date;
-            DateTime finish_date = start_date.AddDays(7);
-
+            
             Dictionary<DateTime, double[]> dict = serviceClient.GetSumInformationBetweenDates(start_date, finish_date, element);
+            
 
             List<string> lista = new List<string>();
 
@@ -175,6 +175,7 @@ namespace SmartH2O_SeeAPP
                 
                 if (sums.Length > 0)
                 {
+
                     lista.Add((day.ToString("dd/MM/yyyy") + ";" + sums[0] + ";" + sums[1] + ";" + sums[2]));
                 }
                 i++;
@@ -184,20 +185,20 @@ namespace SmartH2O_SeeAPP
 
             
             string[] result = lista.Select(x => x.ToString()).ToArray();
-            createGraph(result, "Day", "Values", "Parameters Info on Days");
+            createGraphWithMaxAvgMin(result, "Day", "Values", "Parameters Info on Days");
 
         }
 
-        private bool createGraph (string[] paramVals, string XTitle, string YTitle, string Title)
+        private bool createGraphWithMaxAvgMin (string[] paramVals, string XTitle, string YTitle, string Title)
         {
             chart.Series.Clear();
             chart.Titles.Clear();
             if (paramVals.Length <= 0) return false;
             
             //   START
-            Series min = new Series();
-            Series max = new Series();
             Series avg = new Series();
+            Series max = new Series();
+            Series min = new Series();
                 
 
             foreach (string row in paramVals)
@@ -231,27 +232,183 @@ namespace SmartH2O_SeeAPP
             return true;
         }
 
-        private void buttonStatisticsDaily_Click(object sender, EventArgs e)
+        private void buttonStatistics_Click(object sender, EventArgs e)
         {
             
             string date = dateTimePickerStatistics.Value.ToString("dd/MM/yyyy");
 
             string element = comboBoxStatisticsElement.SelectedItem.ToString();
-            Service1Client serviceClient = new Service1Client();
 
-            if (comboBoxStatisticsTime.SelectedIndex == 0) { 
+
+            if (comboBoxStatisticsElement.SelectedIndex == 3)
+            {
+                DateTime start_date = dateTimePickerStatistics.Value.Date;
+                List<string> elements = new List<string>();
+                List<string[]> all_elements_data = new List<string[]>();
+
+                if (comboBoxStatisticsTime.SelectedIndex == 0)
+                {
+                    //CENAS A IMPLEMENTAR
+                   /* foreach (string item in comboBoxStatisticsElement.Items)
+                    {
+                        if (item.ToString() != "All")
+                        {
+                            elements.Add(item.ToString());
+                            //string[] one_element_data = adapterGraph(start_date, finish_date, item.ToString());
+                            //all_elements_data.Add(one_element_data);
+                        }
+                    }
+
+                    createGraphAll(all_elements_data, "Days", "Values", "Parameters Info", elements);*/
+                }
+                else 
+                {
+                    DateTime finish_date = new DateTime();
+                    if (comboBoxStatisticsTime.SelectedIndex == 1)
+                    {
+                        finish_date = start_date.AddDays(7);
+                    }else
+                    {
+                        finish_date = dateTimePickerStatisticsEndingDate.Value.Date;
+                    }
+
+
+                    foreach (string item in comboBoxStatisticsElement.Items)
+                    {
+                        if (item.ToString() != "All")
+                        {
+                            elements.Add(item.ToString());
+                            string[] one_element_data = adapterGraph(start_date, finish_date, item.ToString());
+                            all_elements_data.Add(one_element_data);
+                        }
+                    }
+
+                    createGraphAll(all_elements_data, "Days", "Values", "Parameters Info", elements);
+                }
+                
+
+                return;
+            }
+
+            if (comboBoxStatisticsTime.SelectedIndex == 0)
+            {
+                Service1Client serviceClient = new Service1Client();
                 string[] paramVals = serviceClient.GetSumInformationAtDay(date, element);
 
-                if ( !createGraph(paramVals, "Hours", "Values", "Parameters Info " + date) )
+                if ( !createGraphWithMaxAvgMin(paramVals, "Hours", "Values", "Parameters Info " + date) )
                     System.Windows.Forms.MessageBox.Show("No data found!");
 
-            }else
+            }
+            else if (comboBoxStatisticsTime.SelectedIndex == 1)
             {
-                displayGraphWithWeeklyData();
+
+                DateTime start_date = dateTimePickerStatistics.Value.Date;
+                DateTime finish_date = start_date.AddDays(7);
+                displayGraphBetweenDates(start_date, finish_date);
+
+            }
+            else
+            {
+
+                DateTime start_date = dateTimePickerStatistics.Value.Date;
+                DateTime finish_date = dateTimePickerStatisticsEndingDate.Value.Date;
+                displayGraphBetweenDates(start_date, finish_date);
+
             }
 
         }
 
+        private string[] adapterGraph(DateTime start_date, DateTime finish_date, string element)
+        {
+            Service1Client serviceClient = new Service1Client();
+            Dictionary<DateTime, double[]> dict = serviceClient.GetSumInformationBetweenDates(start_date, finish_date, element);
+
+            List<string> lista = new List<string>();
+
+            int i = 0;
+            foreach (var day in dict.Keys)
+            {
+                double[] sums = dict[day];
+
+                if (sums.Length > 0)
+                {
+
+                    lista.Add((day.ToString("dd/MM/yyyy") + ";" + sums[0] + ";" + sums[1] + ";" + sums[2]));
+                }
+                i++;
+            }
+            
+            return lista.Select(x => x.ToString()).ToArray();
+        }
+
+        private void comboBoxStatisticsTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxStatisticsTime.SelectedIndex == 2)
+            {
+                dateTimePickerStatisticsEndingDate.Visible = true;
+                buttonStatistics.Location = new Point(554, 14);
+
+            }
+            else
+            {
+                dateTimePickerStatisticsEndingDate.Visible = false;
+                buttonStatistics.Location = new Point(348, 14);
+            }
+        }
+
+        private void comboBoxStatisticsElement_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            comboBoxStatisticsNaoSei.Visible = (comboBoxStatisticsElement.SelectedIndex == 3);
+            
+        }
+
+        private bool createGraphAll(List<string[]> cenas_de_todos_elementos, string XTitle, string YTitle, string Title, List<string> elements)
+        {
+            chart.Series.Clear();
+            chart.Titles.Clear();
+            if (cenas_de_todos_elementos.Count <= 0) return false;
+
+            //   START
+            
+            List<Series> series = new List<Series>();
+            Dictionary<Series, string[]> valores = new Dictionary<Series, string[]>();
+            int j = 0;
+            foreach (string element in elements)
+            {
+                Series serie = new Series();
+                serie.Name = element;
+                serie.ChartType = SeriesChartType.Spline;
+                series.Add(serie);
+                chart.Series.Add(serie);
+                valores[serie] = cenas_de_todos_elementos[j];
+                j++;
+            }
+
+            foreach (Series serie in series)
+            {
+                //foreach (string[] paramVals in all_elements_data) { 
+
+                    foreach (string row in valores[serie])
+                    {
+                        string[] sums = row.Split(';');
+
+
+                        serie.Points.AddXY(sums[0], Convert.ToDouble(sums[comboBoxStatisticsNaoSei.SelectedIndex+1]));
+                        //min.Points.AddXY(sums[0], Convert.ToDouble(sums[1]));
+                        //max.Points.AddXY(sums[0], Convert.ToDouble(sums[2]));
+                        //avg.Points.AddXY(sums[0], Convert.ToDouble(sums[3]));
+                    }
+                //}
+            }
+                        
+            chart.ChartAreas[0].AxisX.Interval = 1;
+            chart.ChartAreas[0].AxisX.Title = XTitle;
+            chart.ChartAreas[0].AxisY.Title = YTitle;
+            chart.Titles.Add(Title);
+
+            return true;
+        }
     }   
 }
 

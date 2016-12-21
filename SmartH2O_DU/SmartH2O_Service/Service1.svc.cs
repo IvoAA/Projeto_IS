@@ -58,6 +58,7 @@ namespace SmartH2O_Service
 
         public Dictionary<DateTime, List<double>> GetSumInformationBetweenDates(DateTime firstDate, DateTime secondDate, string elem)
         {
+            
             //SensorData s = null;
             XmlDocument doc = new XmlDocument();
             doc.Load(FILEPATH);
