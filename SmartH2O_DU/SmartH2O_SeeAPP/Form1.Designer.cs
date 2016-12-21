@@ -555,7 +555,7 @@
             this.comboBoxStatisticsTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStatisticsTime.Items.AddRange(new object[] {
             "Hourly",
-            "Daily by Week",
+            "Weekly By Day",
             "Between Dates"});
             this.comboBoxStatisticsTime.Location = new System.Drawing.Point(56, 20);
             this.comboBoxStatisticsTime.Name = "comboBoxStatisticsTime";

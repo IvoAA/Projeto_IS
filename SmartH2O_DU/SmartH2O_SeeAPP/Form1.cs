@@ -242,6 +242,7 @@ namespace SmartH2O_SeeAPP
 
             if (comboBoxStatisticsElement.SelectedIndex == 3)
             {
+                chart.ChartAreas[0].Area3DStyle.Enable3D = false;
                 DateTime start_date = dateTimePickerStatistics.Value.Date;
                 List<string> elements = new List<string>();
                 List<string[]> all_elements_data = new List<string[]>();
@@ -249,17 +250,18 @@ namespace SmartH2O_SeeAPP
                 if (comboBoxStatisticsTime.SelectedIndex == 0)
                 {
                     //CENAS A IMPLEMENTAR
-                   /* foreach (string item in comboBoxStatisticsElement.Items)
+                    foreach (string item in comboBoxStatisticsElement.Items)
                     {
                         if (item.ToString() != "All")
                         {
                             elements.Add(item.ToString());
-                            //string[] one_element_data = adapterGraph(start_date, finish_date, item.ToString());
-                            //all_elements_data.Add(one_element_data);
+                            Service1Client serviceClient = new Service1Client();
+                            string[] paramVals = serviceClient.GetSumInformationAtDay(date, item.ToString());
+                            all_elements_data.Add(paramVals);
                         }
                     }
 
-                    createGraphAll(all_elements_data, "Days", "Values", "Parameters Info", elements);*/
+                    createGraphAll(all_elements_data, "Days", "Values", "Parameters Info", elements);
                 }
                 else 
                 {
@@ -289,6 +291,9 @@ namespace SmartH2O_SeeAPP
 
                 return;
             }
+
+            chart.ChartAreas[0].Area3DStyle.Enable3D = true;
+            
 
             if (comboBoxStatisticsTime.SelectedIndex == 0)
             {

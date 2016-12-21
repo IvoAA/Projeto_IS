@@ -148,7 +148,7 @@ namespace Alarm
                     triggers[node].CopyTo(nodeTriggers);
 
 
-                    foreach (var trigger in nodeTriggers)
+                    foreach (var trigger in triggers[node])
                     {
                         Trigger t = new Trigger {
                             date = DateTime.Parse(sensor["date"].InnerText),
